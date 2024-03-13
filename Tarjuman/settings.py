@@ -12,14 +12,14 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 from dotenv import load_dotenv
-
+from os import environ
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 try:
-    SECRET_KEY = os.environ["SECRET_KEY"]
+    SECRET_KEY = environ["SECRET_KEY"]
 except KeyError as e:
     raise RuntimeError("Could not find a SECRET_KEY in environment") from e
 
