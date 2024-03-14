@@ -105,7 +105,7 @@
                 & .video__post-thumb {
                     width: 130px;
                     flex: 0 0 auto;
-                    margin: 0 22px 0 0;
+                    margin: 0 0 0 22px;
                     @media #{$lg} {
                         width: 120px;
                     }

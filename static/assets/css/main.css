@@ -52,13 +52,18 @@
   --tg-common-color-white: #fff;
   --tg-common-color-gray: #f5f5f5;
   --tg-common-color-black: #000;
-  --tg-common-color-skinish: #faedca;
+  --tg-common-color-skinish: #f8fae7;
   --tg-body-color: #777777;
   --tg-heading-color: #111111;
   --tg-theme-primary: #ff3366;
   --tg-theme-secondary: #111111;
   --tg-border-1: #e8e8e8;
   --tg-border-2: #2c2c2c;
+  --tg-tarjuman-one: #000000;
+  --tg-tarjuman-two: #ffffff;
+  --tg-tarjuman-three: #D03F46;
+  --tg-tarjuman-four: #FAEDCA;
+  --tg-tarjuman-five: #5B2908;
   --tg-fw-extra-bold: 800;
   --tg-fw-bold: 700;
   --tg-fw-semi-bold: 600;
@@ -3494,7 +3499,7 @@ input[type=color] {
   color: var(--tg-common-color-white);
   letter-spacing: -2px;
   position: relative;
-  margin-right: 20px;
+  margin-left: 20px;
   z-index: 1;
 }
 @media (max-width: 1199.98px) {
@@ -3680,7 +3685,7 @@ input[type=color] {
 .video__post-item.side-post .video__post-thumb {
   width: 130px;
   flex: 0 0 auto;
-  margin: 0 22px 0 0;
+  margin: 0 0 0 22px;
 }
 @media (max-width: 1199.98px) {
   .video__post-item.side-post .video__post-thumb {
