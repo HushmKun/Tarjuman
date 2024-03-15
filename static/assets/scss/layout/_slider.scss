@@ -114,15 +114,15 @@
             flex-wrap: wrap;
             margin: 0 0 11px;
             & li {
-                margin-right: 14px;
-                padding-right: 14px;
+                margin-left: 14px;
+                padding-left: 14px;
                 position: relative;
                 font-size: 14px;
                 font-weight: var(--tg-fw-bold);
                 color: var(--tg-heading-color);
                 text-transform: uppercase;
                 & .by {
-                    color: #d8d8d8;
+                    color: var(--tg-tarjuman-three);
                 }
                 &:last-child {
                     margin-right: 0;
@@ -135,7 +135,7 @@
                     content: "";
                     position: absolute;
                     top: 50%;
-                    right: -2px;
+                    left: -2px;
                     @include transform(translateY(-50%));
                     width: 6px;
                     height: 6px;

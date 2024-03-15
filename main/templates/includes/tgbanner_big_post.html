@@ -1,0 +1,15 @@
+{% load static %}
+
+<div class="tgbanner__post big-post">
+    <div class="tgbanner__thumb tgImage__hover">
+        <a href="blog-details.html"><img src={% static 'assets/img/blog/'%}{{post.main_img}}  alt="img"></a>
+    </div>
+    <div class="tgbanner__content">
+        <ul class="tgbanner__content-meta list-wrap">
+            <li class="category"><a href="blog.html">{{ post.category }}</a></li>
+            <li><span class="by">بواسطة </span> <a href="blog.html">{{ post.author}}</a></li>
+            <li>{{ post.date }}</li>
+        </ul>
+        <h2 class="title tgcommon__hover" dir="rtl"><a href="blog-details.html">{{ post.title }}</a></h2>
+    </div>
+</div>

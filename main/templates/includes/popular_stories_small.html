@@ -1,0 +1,26 @@
+{% load static %}
+
+<div class="row">
+    {% for post in posts %}
+    <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="trending__post stories-small-post__item">
+            <div class="trending__post-thumb tgImage__hover">
+                <a href="#" class="addWish"><i class="fal fa-heart"></i></a>
+                <a href="blog-details.html"><img src={% static 'assets/img/blog/' %}{{post.main_img}} alt="img"></a>
+            </div>
+            <div class="trending__post-content">
+                <ul class="tgbanner__content-meta list-wrap">
+                    <li class="category"><a href="blog.html">{{ post.category }}</a></li>
+                    <li><span class="by">بقلم</span> <a href="blog.html">{{ post.author }}</a></li>
+                </ul>
+                <h4 class="title tgcommon__hover"><a href="blog-details.html">{{ post.title }}</a></h4>
+                <ul class="post__activity list-wrap">
+                    <li><i class="fal fa-signal"></i> 1.5k</li>
+                    <li><a href="blog-details.html"><i class="fal fa-comment-dots"></i> 150</a></li>
+                    <li><i class="fal fa-share-alt"></i> 32</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>

@@ -132,7 +132,7 @@
     }
     & .tgbanner__content-meta li:not(.category) a,
     & .trending__post-content .title {
-        color: var(--tg-common-color-white);
+        color: var(--tg-tarjuman-five);
     }
     & .trending__post-content .title {
         & a {
@@ -144,7 +144,7 @@
     }
     & .post__activity li,
     & .post__activity li a {
-        color: #aeaeae;
+        color: var(--tg-tarjuman-one);
     }
     & .post__activity li i {
         color: #666666;

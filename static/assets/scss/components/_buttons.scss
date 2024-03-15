@@ -7,7 +7,8 @@
     -webkit-user-select:none;
     -moz-user-select: none;
     user-select: none;
-    background: var(--tg-theme-primary) none repeat scroll 0 0;
+    // background: var(--tg-theme-primary) none repeat scroll 0 0;
+    background: var(--tg-tarjuman-three) none repeat scroll 0 0;
     border: medium none;
     border-radius: 0;
     color: var(--tg-common-color-white);
@@ -49,7 +50,7 @@
         line-height: 1;
     }
     & i {
-        margin-left: 12px;
+        margin-right: 12px;
     }
     &:hover {
         color: var(--tg-common-color-white);

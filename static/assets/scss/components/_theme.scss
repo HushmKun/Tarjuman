@@ -45,7 +45,7 @@ body {
 	font-family: var(--tg-body-font-family);
 	font-size: var(--tg-body-font-size);
 	font-weight: var(--tg-fw-regular);
-	color: var(--tg-body-color);
+	color: var(--tg-common-color-black);
 	line-height: var(--tg-body-line-height);
     background-color: var(--tg-common-color-gray);
 }
@@ -56,7 +56,7 @@ img,
 }
 a,
 button {
-	color: var(--tg-theme-primary);
+	color: var(--tg-tarjuman-three);
 	outline: none;
 	text-decoration: none;
 	@include transition(.3s);
@@ -70,7 +70,7 @@ a:focus,
 }
 a:hover,
 button:hover {
-	color: var(--tg-theme-primary);
+	color: var(--tg-tarjuman-three);
 	text-decoration: none;
 }
 button:focus,
@@ -87,7 +87,7 @@ h4,
 h5,
 h6 {
 	font-family: var(--tg-heading-font-family);
-	color: var(--tg-heading-color);
+	color: var(--tg-tarjuman-five);
 	margin-top: 0px;
 	font-weight: var(--tg-fw-bold);
 	line-height: 1.2;

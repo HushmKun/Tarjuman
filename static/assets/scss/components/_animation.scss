@@ -5,20 +5,20 @@
 ===============================*/
 @-webkit-keyframes lineMove {
     from {
-		background-position: left;
+		background-position: right;
 	}
 	to {
-		background-position: right;
+		background-position: left;
 	}
 }
 
 @keyframes lineMove {
     from {
-        background-position: left;
+        background-position: right;
     }
 
     to {
-        background-position: right;
+        background-position: left;
     }
 }
 

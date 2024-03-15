@@ -14,7 +14,7 @@
 	color: var(--tg-common-color-white);
 	text-align: center;
 	cursor: pointer;
-	background: var(--tg-theme-primary);
+	background: var(--tg-tarjuman-three);
 	transition: 1s ease;
 	border: none;
     &.open {
@@ -38,7 +38,7 @@
         background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 80%);
     }
     &:hover {
-        background: var(--tg-theme-secondary);
+        background: var(--tg-tarjuman-five);
     }
     @media #{$md} {
         right: 30px;
