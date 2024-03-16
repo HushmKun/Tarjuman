@@ -296,6 +296,10 @@ input[type=color] {
 /*=============================
     - Bootstrap Custom
 =============================*/
+#sticky-header {
+  background-color: var(--tg-tarjuman-five);
+}
+
 .container {
   padding-left: 15px;
   padding-right: 15px;
@@ -556,6 +560,14 @@ input[type=color] {
 
 .black-bg {
   background: var(--tg-common-color-black);
+}
+
+.brown-bg {
+  background: var(--tg-tarjuman-five);
+}
+
+.yellow-bg {
+  background: var(--tg-tarjuman-four);
 }
 
 /*=============================
@@ -1245,7 +1257,7 @@ input[type=color] {
 .offcanvas-toggle a {
   display: block;
   font-size: 26px;
-  color: var(--tg-heading-color);
+  color: var(--tg-common-color-white);
 }
 .offcanvas-toggle a:hover {
   color: var(--tg-theme-primary);
@@ -1329,7 +1341,7 @@ input[type=color] {
   font-size: 14px;
   font-weight: var(--tg-fw-bold);
   text-transform: uppercase;
-  color: var(--tg-heading-color);
+  color: var(--tg-tarjuman-two);
   padding: 23px 28px;
   display: inline-flex;
   line-height: 1;

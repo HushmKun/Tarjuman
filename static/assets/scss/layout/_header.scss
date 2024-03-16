@@ -253,7 +253,7 @@
     & a {
         display: block;
         font-size: 26px;
-        color: var(--tg-heading-color);
+        color: var(--tg-common-color-white);
         &:hover {
             color: var(--tg-theme-primary);
         }
@@ -327,7 +327,7 @@
                     font-size: 14px;
                     font-weight: var(--tg-fw-bold);
                     text-transform: uppercase;
-                    color: var(--tg-heading-color);
+                    color: var(--tg-tarjuman-two);
                     padding: 23px 28px;
                     display: inline-flex;
                     line-height: 1;
