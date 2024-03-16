@@ -1288,7 +1288,7 @@ input[type=color] {
   font-size: 30px;
   cursor: pointer;
   line-height: 1;
-  color: var(--tg-theme-primary);
+  color: var(--tg-tarjuman-four);
   display: none;
   margin-top: 1px;
 }
@@ -1299,8 +1299,8 @@ input[type=color] {
 }
 
 .tgmenu__wrap {
-  border-top: 1px solid var(--tg-border-1);
-  border-bottom: 1px solid var(--tg-border-1);
+  border-top: 1px solid var(--tg-tarjuman-four);
+  border-bottom: 1px solid var(--tg-tarjuman-four);
   padding: 0 20px;
 }
 @media (max-width: 991.98px) {
@@ -1568,6 +1568,14 @@ input[type=color] {
 }
 .logo a.logo-light {
   display: none;
+}
+@media(max-width: 767.98px) {
+  .logo a.logo-dark {
+    display: none;
+  }
+  .logo a.logo-light {
+    display: inline-block;
+  }
 }
 
 .sticky-menu {

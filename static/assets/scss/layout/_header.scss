@@ -281,7 +281,7 @@
             font-size: 30px;
             cursor: pointer;
             line-height: 1;
-            color: var(--tg-theme-primary);
+            color: var(--tg-tarjuman-four);
             display: none;
             margin-top: 1px;
             @media #{$md} {
@@ -292,8 +292,8 @@
 }
 .tgmenu {
     &__wrap {
-        border-top: 1px solid var(--tg-border-1);
-        border-bottom: 1px solid var(--tg-border-1);
+        border-top: 1px solid var(--tg-tarjuman-four);
+        border-bottom: 1px solid var(--tg-tarjuman-four);
         padding: 0 20px;
         @media #{$md} {
             @include flexbox();
@@ -582,9 +582,22 @@
     & img {
         max-width: 109px;
     }
-    &.logo-light {
+
+    &.logo-light{
         display: none;
     }
+    
+    @media#{$xs}{
+        &.logo-dark {
+            display: none;
+        }
+        
+        &.logo-light {
+            display: inline-block;
+        }
+
+    }
+
 }
 .sticky-menu {
 	position: fixed;
