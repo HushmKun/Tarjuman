@@ -11,5 +11,4 @@ urlpatterns = [
 #! Need Recent & Popular & Editors Pick pages  
 #! Author Page 
 #! Categories Pages
-#! Categories ImageField 
 

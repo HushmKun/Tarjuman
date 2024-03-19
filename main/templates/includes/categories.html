@@ -7,7 +7,7 @@
         <li>
             <span class="float-right">{{ cat.posts.count }}</span>
             <a href={% url 'category' cat.name %}>{{ cat.name }}</a>
-            <div class="thumb"><a href={% url 'category' cat.name %}><img src={% static 'assets/img/category/side_category01.jpg' %} alt="img"></a></div> {% comment %}! IMAGEFIELD {% endcomment %}
+            <div class="thumb"><a href={% url 'category' cat.name %}><img src={{ cat.img.url }} alt="img"></a></div> {% comment %}! IMAGEFIELD {% endcomment %}
         </li>
         {% endfor %}
     </ul>

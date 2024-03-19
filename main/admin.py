@@ -9,7 +9,7 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class Admin(admin.ModelAdmin):
-    list_display = ["name", "eng_name"]
+    list_display = ["name", "eng_name", "img"]
     
 
 @admin.register(Post)

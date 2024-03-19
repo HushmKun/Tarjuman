@@ -61,8 +61,12 @@ WSGI_APPLICATION = "Tarjuman.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": environ['DBNAME'],
+        "USER": environ['DBUSER'],
+        "PASSWORD": environ['DBPASS'],
+        "HOST": environ['DBHOST'],
+        "PORT": environ['DBPORT'],
     }
 }
 
@@ -96,8 +100,9 @@ STATIC_ROOT = '/var/www/tarjuman.tech/static'
 
 #* Media Files Management 
 MEDIA_URL = "media/"
-# MEDIA_ROOT = '/var/www/tarjuman.tech/media'
-MEDIA_ROOT = BASE_DIR / 'media'
+if DEBUG : 
+    MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = '/var/www/tarjuman.tech/media'
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
