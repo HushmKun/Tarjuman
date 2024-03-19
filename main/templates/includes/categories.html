@@ -1,0 +1,14 @@
+{% load static %}
+
+<div class="widget sidebar-widget widget_categories">
+    <h4 class="widget-title">جميع الأقسام</h4>
+    <ul class="list-wrap">
+        {% for cat in categories %}
+        <li>
+            <span class="float-right">{{ cat.posts.count }}</span>
+            <a href={% url 'category' cat.name %}>{{ cat.name }}</a>
+            <div class="thumb"><a href={% url 'category' cat.name %}><img src={% static 'assets/img/category/side_category01.jpg' %} alt="img"></a></div> {% comment %}! IMAGEFIELD {% endcomment %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>

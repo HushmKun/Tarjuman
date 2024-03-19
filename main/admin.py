@@ -9,10 +9,10 @@ class AuthorAdmin(admin.ModelAdmin):
 
 @admin.register(Category)
 class Admin(admin.ModelAdmin):
-    list_display = ["name"]
+    list_display = ["name", "eng_name"]
     
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    list_display = ["title", "category", "author", "date", "slug", "content", "main_img"]
+    list_display = ["title", "category", 'desc', "author", "date", "slug", "content", "main_img"]
 

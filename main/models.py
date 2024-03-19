@@ -5,6 +5,7 @@ from django.db import models
 class Category(models.Model):
 
     name = models.CharField(max_length=60)
+    eng_name = models.CharField(max_length=60, null=True)
 
     class Meta:
         verbose_name = "Category"
@@ -20,7 +21,7 @@ class Category(models.Model):
 class Author(models.Model):
 
     name = models.CharField(max_length=50)
-    img = models.CharField(max_length=50)
+    img = models.ImageField(upload_to="avatars", height_field=None, width_field=None, max_length=None)
     desc = models.TextField()
 
     class Meta:
@@ -37,12 +38,13 @@ class Author(models.Model):
 class Post(models.Model):
 
     title = models.CharField(max_length=150)
-    category = models.ForeignKey("Category", on_delete=models.CASCADE)
+    category = models.ForeignKey("Category", on_delete=models.CASCADE,related_name="posts")
     author = models.ForeignKey("author", on_delete=models.CASCADE)
     date = models.DateField(auto_now=False, auto_now_add=True)
     slug = models.CharField(max_length=50)
-    main_img = models.CharField(max_length=50)
+    main_img = models.ImageField(upload_to="posts", height_field=None, width_field=None, max_length=None)
     content = models.TextField()
+    desc = models.TextField()
 
 
     class Meta:

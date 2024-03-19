@@ -5,7 +5,7 @@
     <div class="col-md-6">
         <div class="stories-post__item">
             <div class="stories-post__thumb tgImage__hover">
-                <a href="blog-details.html"><img src={% static 'assets/img/blog/' %}{{ post.main_img}} alt="img"></a>
+                <a href="blog-details.html"><img src={{ post.main_img.url }} alt="img"></a>
             </div>
             <div class="stories-post__content video__post-content">
                 <ul class="tgbanner__content-meta list-wrap">

@@ -16,3 +16,18 @@ def home(request):
         "popular_stories": [pos, pos, pos, pos, pos, pos,]
     }
     return render(request, 'main/index.html', context)
+
+def category(request, cat):
+    categories = Category.objects.all()
+    category = categories.get(eng_name=cat)
+    posts = category.posts.all()
+
+    context = {
+        "category" : category, 
+        "categories" : categories, 
+        "posts" : posts
+    }
+    return render(request, 'main/category.html', context)
+
+def post(request,slug):
+    pass

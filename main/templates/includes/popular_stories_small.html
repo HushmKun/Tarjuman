@@ -6,7 +6,7 @@
         <div class="trending__post stories-small-post__item">
             <div class="trending__post-thumb tgImage__hover">
                 <a href="#" class="addWish"><i class="fal fa-heart"></i></a>
-                <a href="blog-details.html"><img src={% static 'assets/img/blog/' %}{{post.main_img}} alt="img"></a>
+                <a href="blog-details.html"><img src={{post.main_img.url}} alt="img"></a>
             </div>
             <div class="trending__post-content">
                 <ul class="tgbanner__content-meta list-wrap">

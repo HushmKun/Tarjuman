@@ -10,7 +10,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/x-icon" href={% static 'assets/img/favicon.ico' %}>
-    <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
     <link rel="stylesheet" href={% static 'assets/css/bootstrap.min.css' %}>
@@ -59,8 +58,8 @@
                     </div>
                     <div class="col-lg-4 col-md-3 order-0 order-lg-2 d-none d-md-block">
                         <div class="header__top-logo logo text-lg-center">
-                            <a href="index.html" class="logo-dark"><img src={% static 'assets/img/logo/logo.png' %} alt="Logo"></a>
-                            <a href="index.html" class="logo-light"><img src={% static 'assets/img/logo/w_logo.png' %} alt="Logo"></a>
+                            <a href={% url 'home' %} class="logo-dark"><img src={% static 'assets/img/logo/logo.png' %} alt="Logo"></a>
+                            <a href={% url 'home' %} class="logo-light"><img src={% static 'assets/img/logo/w_logo.png' %} alt="Logo"></a>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-3 col-sm-6 order-3 d-none d-sm-block">
@@ -81,20 +80,20 @@
                         <div class="tgmenu__wrap">
                             <nav class="tgmenu__nav">
                                 <div class="logo d-block d-md-none">
-                                    <a href="index.html" class="logo-dark"><img src={% static 'assets/img/logo/logo.png' %} alt="Logo"></a>
-                                    <a href="index.html" class="logo-light"><img src={% static 'assets/img/logo/w_logo.png' %} alt="Logo"></a>
+                                    <a href={% url 'home' %} class="logo-dark"><img src={% static 'assets/img/logo/logo.png' %} alt="Logo"></a>
+                                    <a href={% url 'home' %} class="logo-light"><img src={% static 'assets/img/logo/w_logo.png' %} alt="Logo"></a>
                                 </div>
                                 <div class="offcanvas-toggle">
                                     <a href="#"><i class="flaticon-menu-bar"></i></a>
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="active"><a href="#">الرئيسية</a></li>
-                                        <li><a href="lifestyle.html">فرعوني</a></li>
-                                        <li><a href="#">قبطي</a></li>
-                                        <li><a href="travel.html">إسلامي</a></li>
-                                        <li><a href="travel.html">حديث</a></li>
-                                        <li><a href="nft.html">بودكاست</a></li>
+                                        <li class="active"><a href={% url 'home' %}>الرئيسية</a></li>
+                                        <li><a href={% url 'category' 'pharnoic' %}>فرعوني</a></li>
+                                        <li><a href={% url 'category' 'coptic' %}>قبطي</a></li>
+                                        <li><a href={% url 'category' 'islamic' %}>إسلامي</a></li>
+                                        <li><a href={% url 'category' 'modern' %}>حديث</a></li>
+                                        <li><a href="#">بودكاست</a></li>
                                     </ul>
                                 </div>
                             </nav>
@@ -105,8 +104,8 @@
                             <nav class="tgmobile__menu-box">
                                 <div class="close-btn"><i class="fas fa-times"></i></div>
                                 <div class="nav-logo">
-                                    <a href="index.html" class="logo-dark"><img src={% static 'assets/img/logo/logo.png' %} alt="Logo"></a>
-                                    <a href="index.html" class="logo-light"><img src={% static 'assets/img/logo/w_logo.png' %} alt="Logo"></a>
+                                    <a href={% url 'home' %} class="logo-dark"><img src={% static 'assets/img/logo/logo.png' %} alt="Logo"></a>
+                                    <a href={% url 'home' %} class="logo-light"><img src={% static 'assets/img/logo/w_logo.png' %} alt="Logo"></a>
                                 </div>
                                 <div class="tgmobile__search">
                                     <form action="#">
@@ -141,8 +140,8 @@
                 <div class="offCanvas__toggle"><i class="flaticon-addition"></i></div>
                 <div class="offCanvas__content">
                     <div class="offCanvas__logo logo">
-                        <a href="index.html" class="logo-dark"><img src={% static 'assets/img/logo/logo.png' %} alt="Logo"></a>
-                        <a href="index.html" class="logo-light"><img src={% static 'assets/img/logo/w_logo.png' %} alt="Logo"></a>
+                        <a href={% url 'home' %} class="logo-dark"><img src={% static 'assets/img/logo/logo.png' %} alt="Logo"></a>
+                        <a href={% url 'home' %} class="logo-light"><img src={% static 'assets/img/logo/w_logo.png' %} alt="Logo"></a>
                     </div>
                     <p>ترجمان:  بوابة القاهرة إلى الزمن الغابر.</p>
                     <ul class="offCanvas__instagram list-wrap">
@@ -241,7 +240,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-3 col-md-4">
                         <div class="footer__logo logo">
-                            <a href="index.html"><img src={% static 'assets/img/logo/w_logo.png' %} alt="Logo"></a>
+                            <a href={% url 'home' %}><img src={% static 'assets/img/logo/w_logo.png' %} alt="Logo"></a>
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-8">

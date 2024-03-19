@@ -101,7 +101,7 @@
             & .thumb {
                 max-width: 60px;
                 flex: 0 0 auto;
-                margin-right: 20px;
+                margin-left: 20px;
                 & img {
                     @include border-radius(50%);
                 }
@@ -113,7 +113,7 @@
                 }
             }
             & span {
-                margin-left: auto;
+                margin-right: auto;
                 color: var(--tg-theme-primary);
             }
         }
@@ -199,7 +199,7 @@
 }
 .sidebarInsta {
     &__wrap {
-        background: var(--tg-theme-secondary);
+        background: var(--tg-tarjuman-five);
     }
     &__top {
         @include flexbox();
@@ -209,7 +209,7 @@
     &__logo {
         flex: 0 0 auto;
         width: 60px;
-        margin-right: 16px;
+        margin-left: 16px;
         & img {
             @include border-radius(50%);
         }

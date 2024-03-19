@@ -7,7 +7,7 @@
             <div class="trending__post">
                 <div class="trending__post-thumb tgImage__hover">
                     <a href="#" class="addWish"><i class="fal fa-heart"></i></a>
-                    <a href="blog-details.html"><img src={% static 'assets/img/blog/' %}{{ post.main_img}} alt="img"></a>
+                    <a href="blog-details.html"><img src={{post.main_img.url}} alt="img"></a>
                     <span class="is_trend"><i class="fas fa-bolt"></i></span>
                 </div>
                 <div class="trending__post-content">

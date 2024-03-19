@@ -6,13 +6,13 @@
                         
     <div class="tgbanner__post small-post">
         <div class="tgbanner__thumb tgImage__hover">
-            <a href="blog-details.html"><img src={% static 'assets/img/blog/' %}{{post.main_img}} alt="img"></a>
+            <a href={% url 'post' post.slug %}><img src={{ post.main_img.url }} alt="img"></a>
         </div>
         <div class="tgbanner__content">
             <ul class="tgbanner__content-meta list-wrap">
-                <li class="category"><a href="blog.html">{{ post.category}}</a></li>
+                <li class="category"><a href={% url 'category' post.category %}>{{ post.category}}</a></li>
             </ul>
-            <h2 class="title tgcommon__hover"><a href="#">{{ post.title }}</a></h2>
+            <h2 class="title tgcommon__hover"><a href={% url 'post' post.slug %}>{{ post.title }}</a></h2>
         </div>
     </div>
     {% endfor %}    

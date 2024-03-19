@@ -1,0 +1,21 @@
+{% load static %}
+
+{% for post in posts %}
+<div class="latest__post-item">
+    <div class="latest__post-thumb tgImage__hover">
+        <a href="{% url 'post' post.slug %}"><img src={% static 'assets/img/lifestyle/life_style08.jpg' %} alt="img"></a>
+    </div>
+    <div class="latest__post-content">
+        <ul class="tgbanner__content-meta list-wrap">
+            <li class="category"><a href="blog.html">{{ post.category }}</a></li>
+            <li><span class="by">بواسطة</span> <a href="blog.html">{{ post.author }}</a></li>
+            <li>{{ post.date}}</li>
+        </ul>
+        <h3 class="title tgcommon__hover"><a href="{% url 'post' post.slug %}">{{post.title}}</a></h3>
+        <p>{{ post.desc }}</p>
+        <div class="latest__post-read-more">
+            <a href="{% url 'post' post.slug %}">إقرأ المزيد <i class="far fa-long-arrow-left"></i></a>
+        </div>
+    </div>
+</div>
+{% endfor %}

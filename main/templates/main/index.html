@@ -27,7 +27,7 @@
 
         <!-- trending-area -->
         <section class="trending-post-area section__hover-line pt-25">
-            <div class="container">
+            <div class="container newest">
                 <div class="section__title-wrap mb-40">
                     <div class="row align-items-end">
                         <div class="col-sm-6">
@@ -77,7 +77,7 @@
 
         <!-- stories-post-area -->
         <section class="stories-post-area section__hover-line pt-75 pb-40">
-            <div class="container">
+            <div class="container newest">
                 <div class="section__title-wrap mb-40">
                     <div class="row align-items-end">
                         <div class="col-sm-6">
@@ -93,93 +93,8 @@
                         </div>
                     </div>
                 </div>
-                
                 {% include 'includes/popular_stories_big.html' with posts=popular_stories|slice:":2" %}
-                
                 {% include 'includes/popular_stories_small.html' with posts=popular_stories|slice:"2:" %}
-                {% comment %} <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="trending__post stories-small-post__item">
-                            <div class="trending__post-thumb tgImage__hover">
-                                <a href="#" class="addWish"><i class="fal fa-heart"></i></a>
-                                <a href="blog-details.html"><img src={% static 'assets/img/blog/blog27.jpg' %} alt="img"></a>
-                            </div>
-                            <div class="trending__post-content">
-                                <ul class="tgbanner__content-meta list-wrap">
-                                    <li class="category"><a href="blog.html">Gaming</a></li>
-                                    <li><span class="by">By</span> <a href="blog.html">miranda h.</a></li>
-                                </ul>
-                                <h4 class="title tgcommon__hover"><a href="blog-details.html">Scientists speculate that ours might not be held</a></h4>
-                                <ul class="post__activity list-wrap">
-                                    <li><i class="fal fa-signal"></i> 1.5k</li>
-                                    <li><a href="blog-details.html"><i class="fal fa-comment-dots"></i> 150</a></li>
-                                    <li><i class="fal fa-share-alt"></i> 32</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="trending__post stories-small-post__item">
-                            <div class="trending__post-thumb tgImage__hover">
-                                <a href="#" class="addWish"><i class="fal fa-heart"></i></a>
-                                <a href="blog-details.html"><img src={% static 'assets/img/blog/blog28.jpg' %} alt="img"></a>
-                            </div>
-                            <div class="trending__post-content">
-                                <ul class="tgbanner__content-meta list-wrap">
-                                    <li class="category"><a href="blog.html">tech</a></li>
-                                    <li><span class="by">By</span> <a href="blog.html">miranda h.</a></li>
-                                </ul>
-                                <h4 class="title tgcommon__hover"><a href="blog-details.html">The Multiverse is the collection of alternate universes</a></h4>
-                                <ul class="post__activity list-wrap">
-                                    <li><i class="fal fa-signal"></i> 1.5k</li>
-                                    <li><a href="blog-details.html"><i class="fal fa-comment-dots"></i> 150</a></li>
-                                    <li><i class="fal fa-share-alt"></i> 32</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="trending__post stories-small-post__item">
-                            <div class="trending__post-thumb tgImage__hover">
-                                <a href="#" class="addWish"><i class="fal fa-heart"></i></a>
-                                <a href="blog-details.html"><img src={% static 'assets/img/blog/blog29.jpg' %} alt="img"></a>
-                            </div>
-                            <div class="trending__post-content">
-                                <ul class="tgbanner__content-meta list-wrap">
-                                    <li class="category"><a href="blog.html">movie</a></li>
-                                    <li><span class="by">By</span> <a href="blog.html">miranda h.</a></li>
-                                </ul>
-                                <h4 class="title tgcommon__hover"><a href="blog-details.html">That share a universal hierarchy a large variety of these</a></h4>
-                                <ul class="post__activity list-wrap">
-                                    <li><i class="fal fa-signal"></i> 1.2k</li>
-                                    <li><a href="blog-details.html"><i class="fal fa-comment-dots"></i> 150</a></li>
-                                    <li><i class="fal fa-share-alt"></i> 26</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="trending__post stories-small-post__item">
-                            <div class="trending__post-thumb tgImage__hover">
-                                <a href="#" class="addWish"><i class="fal fa-heart"></i></a>
-                                <a href="blog-details.html"><img src={% static 'assets/img/blog/blog30.jpg' %} alt="img"></a>
-                            </div>
-                            <div class="trending__post-content">
-                                <ul class="tgbanner__content-meta list-wrap">
-                                    <li class="category"><a href="blog.html">sports</a></li>
-                                    <li><span class="by">By</span> <a href="blog.html">miranda h.</a></li>
-                                </ul>
-                                <h4 class="title tgcommon__hover"><a href="blog-details.html">Universes were originated from another due to a major</a></h4>
-                                <ul class="post__activity list-wrap">
-                                    <li><i class="fal fa-signal"></i> 1.2k</li>
-                                    <li><a href="blog-details.html"><i class="fal fa-comment-dots"></i> 150</a></li>
-                                    <li><i class="fal fa-share-alt"></i> 26</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div> {% endcomment %}
-            
             </div>
 
         </section>

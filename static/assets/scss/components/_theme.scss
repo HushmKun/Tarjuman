@@ -241,7 +241,11 @@ input[type="color"] {
 #sticky-header{
 	background-color: var(--tg-tarjuman-five);
 }
-
+.newest{
+	padding:4em !important;
+	border-radius: 1em;
+	background-color: rgba(250, 237, 202, 0.2);
+}
 .container {
     padding-left: 15px;
     padding-right: 15px;

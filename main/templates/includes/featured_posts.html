@@ -4,10 +4,10 @@
     {% for post in posts %}
     <div class="col-lg-4 col-sm-6">
         <div class="featured__post">
-            <div class="featured__thumb" data-background="{% static 'assets/img/blog/' %}{{ post.main_img}}">01</div>
+            <div class="featured__thumb" data-background="{{ post.main_img.url}}">0{{forloop.counter}}</div>
             <div class="featured__content">
                 <ul class="tgbanner__content-meta list-wrap">
-                    <li class="category"><a href="blog.html">{{ post.category}}</a></li>
+                    <li class="category"><a href={{}}>{{ post.category}}</a></li>
                     <li><span class="by">بواسطة</span> <a href="blog.html">{{ post.author}}</a></li>
                 </ul>
                 <h4 class="title tgcommon__hover"><a href="blog-details.html">{{ post.title }}</a></h4>
