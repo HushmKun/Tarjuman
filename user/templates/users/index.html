@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block page_title %}
+    الترجمان | {{ user.first_name }}
+{% endblock page_title %}
+{% block head %}
+    <link rel="stylesheet" href={% static 'assets/css/user.css' %}>
+{% endblock head %}
+{% block content %}
+    <div class="content-profile-page">
+        <div class="profile-user-page card">
+            <div class="img-user-profile">
+                <img class="profile-bgHome"
+                     src="https://37.media.tumblr.com/88cbce9265c55a70a753beb0d6ecc2cd/tumblr_n8gxzn78qH1st5lhmo1_1280.jpg" />
+                <img class="avatar" src={{ user.profile.profile_picture.url }} alt="allan" />
+            </div>
+            <div class="user-profile-data">
+                <h1>{{ user.first_name }}</h1>
+            </div>
+            <div class="description-profile">مرحبا بك في موقعنا!</div>
+            <ul class="data-user">
+                <li>
+                    <a><strong>{{ no_of_comments }}</strong><span>علقت</span></a>
+                </li>
+            </ul>
+            {% if user.is_authenticated %}
+                <div class="d-flex justify-content-between">
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit">تسجيل خروج</button>
+                    </form>
+                    <div style="width: 13%;
+                                margin: 5px;
+                                background-color: var(--tg-tarjuman-five);
+                                padding: 5px;
+                                border-radius: 5px 0 0 5px ">
+                        <a href="{% url 'password_change' %}"
+                           style="color: var(--tg-tarjuman-four)">تغيير كلمة المرور</a>
+                    </div>
+                </div>
+            {% else %}
+                <a href="{% url 'login' %}">
+                    <button>تسجيل دخول</button>
+                </a>
+            {% endif %}
+        </div>
+    </div>
+{% endblock content %}

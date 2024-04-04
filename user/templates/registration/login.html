@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href={% static 'assets/css/forms.css' %}>
+{% endblock head %}
+
+{% block content %}
+
+<div class="login-page">
+    <div class="form">
+        {{form.non_field_errors}}
+        <form class="login-form" method="post">
+          <h2>تسجيل دخول </h2>
+        {% csrf_token %}
+        {{ form.username.errors}}
+        <label for="{{ form.username.id_for_label }}">أدخل إسم المستخدم: </label>
+        {{ form.username}}
+        {{ form.password.errors}}
+        <label for="{{ form.password.id_for_label }}">كلمة المرور:</label>
+        {{ form.password}}
+        <button>سجل دخول</button>
+        <p class="message"><a href="{% url 'register' %}">إنشئ حساب</a></p>
+        <p class="message"><a href="{% url 'home' %}">عد للصفحة الرئيسية</a></p>
+        <p class="message"><a href="{% url 'password_reset' %}">إسترجاع كلمة السر</a></p>
+      </form>
+    </div>
+</div>
+  
+{% endblock %}

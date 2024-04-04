@@ -6,18 +6,17 @@
         <div class="trending__post stories-small-post__item">
             <div class="trending__post-thumb tgImage__hover">
                 <a href="#" class="addWish"><i class="fal fa-heart"></i></a>
-                <a href="blog-details.html"><img src={{post.main_img.url}} alt="img"></a>
+                <a href={% url 'post' post.slug %}><img src={{post.main_img.url}} alt="img"></a>
             </div>
             <div class="trending__post-content">
                 <ul class="tgbanner__content-meta list-wrap">
-                    <li class="category"><a href="blog.html">{{ post.category }}</a></li>
-                    <li><span class="by">بقلم</span> <a href="blog.html">{{ post.author }}</a></li>
+                    <li class="category"><a href={% url 'category' post.category.eng_name %}>{{ post.category }}</a></li>
+                    <li><span class="by">بقلم</span> <a href="blog.html">{{ post.author }}</a></li> {% comment %}! Author url{% endcomment %}
                 </ul>
-                <h4 class="title tgcommon__hover"><a href="blog-details.html">{{ post.title }}</a></h4>
+                <h4 class="title tgcommon__hover"><a href={% url 'post' post.slug %}>{{ post.ext_name }}</a></h4>
                 <ul class="post__activity list-wrap">
-                    <li><i class="fal fa-signal"></i> 1.5k</li>
-                    <li><a href="blog-details.html"><i class="fal fa-comment-dots"></i> 150</a></li>
-                    <li><i class="fal fa-share-alt"></i> 32</li>
+                    <li><i class="fal fa-signal"></i>{{ post.likes }}</li>
+                    <li><a href={% url 'post' post.slug %}><i class="fal fa-comment-dots"></i> 150</a></li>
                 </ul>
             </div>
         </div>

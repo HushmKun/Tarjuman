@@ -22,11 +22,12 @@
 	position: absolute;
 	left: 50%;
 	top: 50%;
-    @include transform(translate(-50%, -50%));
-    @include flexbox();
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
+  @include transform(translate(-50%, -50%));
+  @include flexbox();
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  width: 20%;
 }
 .object{
 	width: 20px;
@@ -85,4 +86,24 @@
     transform: scale(0);
     -webkit-transform: scale(0);
   }
+}
+
+@keyframes flip-with-rotate {
+  0% {
+      transform: scale(1);
+  }
+
+  50% {
+      transform: scale(2);
+  }
+
+  100% {
+      transform: scale(1);
+  }
+}
+
+#loader-logo{
+  -webkit-animation: flip-with-rotate 1.5s infinite;
+  animation: flip-with-rotate 1.5s infinite;
+  animation-timing-function: ease-in-out;
 }

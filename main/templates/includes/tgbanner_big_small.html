@@ -10,9 +10,9 @@
         </div>
         <div class="tgbanner__content">
             <ul class="tgbanner__content-meta list-wrap">
-                <li class="category"><a href={% url 'category' post.category %}>{{ post.category}}</a></li>
+                <li class="category"><a href={% url 'category' post.category.eng_name %}>{{ post.category}}</a></li>
             </ul>
-            <h2 class="title tgcommon__hover"><a href={% url 'post' post.slug %}>{{ post.title }}</a></h2>
+            <h2 class="title tgcommon__hover"><a href={% url 'post' post.slug %}>{{ post.ext_name }}</a></h2>
         </div>
     </div>
     {% endfor %}    

@@ -1,30 +1,21 @@
 {% extends 'base.html' %}
 {% load static %}
-
-
 {% block page_title %}
-ترجمان | الصفحة الرئيسية
+    ترجمان | الصفحة الرئيسية
 {% endblock page_title %}
-
-
 {% block content %}
     <!-- main-area -->
     <main>
-
         <!-- banner-area -->
         <section class="tgbanner__area">
             <div class="container">
                 <div class="tgbanner__grid">
-
-                    {% include 'includes/tgbanner_big_post.html' with post=main_post  %}
-                    {% include 'includes/tgbanner_big_small.html' with posts=smaller_posts  %}
-
-                    
+                    {% include 'includes/tgbanner_big_post.html' with post=main_post %}
+                    {% include 'includes/tgbanner_big_small.html' with posts=smaller_posts %}
                 </div>
             </div>
         </section>
         <!-- banner-area-end -->
-
         <!-- trending-area -->
         <section class="trending-post-area section__hover-line pt-25">
             <div class="container newest">
@@ -43,15 +34,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="trending__slider">
-
-                    {% include 'includes/swiper-slide.html' with posts=slider_posts   %}
-
-                </div>
+                <div class="trending__slider">{% include 'includes/swiper-slide.html' with posts=slider_posts %}</div>
             </div>
         </section>
         <!-- trending-area-end -->
-
         <!-- featured-area -->
         <section class="featured-post-area section__hover-line pt-75">
             <div class="container">
@@ -70,11 +56,22 @@
                         </div>
                     </div>
                 </div>
-                {% include 'includes/featured_posts.html' with posts=editors_choice%}
+                {% include 'includes/featured_posts.html' with posts=editors_choice %}
             </div>
         </section>
         <!-- featured-area-end -->
-
+        <div class="advertisement pt-45 pb-80">
+            <div class="container">
+                <div class="col-12">
+                    <div class="advertisement__image text-center">
+                        <a href="#">
+                            <img src="{% static 'assets/img/others/advertisement.png' %}"
+                                 alt="advertisement">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- stories-post-area -->
         <section class="stories-post-area section__hover-line pt-75 pb-40">
             <div class="container newest">
@@ -96,10 +93,8 @@
                 {% include 'includes/popular_stories_big.html' with posts=popular_stories|slice:":2" %}
                 {% include 'includes/popular_stories_small.html' with posts=popular_stories|slice:"2:" %}
             </div>
-
         </section>
         <!-- stories-post-area-end -->
-
         <!-- newsletter-area -->
         <section class="newsletter-area pb-80">
             <div class="container">
@@ -108,7 +103,7 @@
                         <div class="col-xl-5 col-lg-6">
                             <div class="newsletter__title">
                                 <span class="sub-title">النشرة الإخبارية</span>
-                                <h4 class="title"> أحصل علي أحدث الأخبار و المقالات من موقعنا علي بريدك الإلكتروني</h4>
+                                <h4 class="title">أحصل علي أحدث الأخبار و المقالات من موقعنا علي بريدك الإلكتروني</h4>
                             </div>
                         </div>
                         <div class="col-xl-7 col-lg-6">
@@ -118,11 +113,12 @@
                                         <input type="email" placeholder="البريد الإلكتروني" required>
                                         <div class="form-check">
                                             <input class="form-check-input" type="checkbox" id="flexCheckDefault">
-                                            <label class="form-check-label" for="flexCheckDefault">
-                                                أنا أوافق/أسمح بأن يتم مشاركة بياناتي مع موقع ترجمان                                            </label>
+                                            <label class="form-check-label" for="flexCheckDefault">أنا أوافق/أسمح بأن يتم مشاركة بياناتي مع موقع ترجمان</label>
                                         </div>
                                     </div>
-                                    <button class="btn" type="submit"><span class="text">أشترك معنا</span> <i class="fas fa-paper-plane"></i></button>
+                                    <button class="btn" type="submit">
+                                        <span class="text">أشترك معنا</span> <i class="fas fa-paper-plane"></i>
+                                    </button>
                                 </form>
                             </div>
                         </div>
@@ -131,8 +127,6 @@
             </div>
         </section>
         <!-- newsletter-area-end -->
-
     </main>
     <!-- main-area-end -->
 {% endblock content %}
-

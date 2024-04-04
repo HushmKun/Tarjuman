@@ -8,6 +8,25 @@ function preloader() {
 	$('#preloader').delay(0).fadeOut();
 };
 
+$(document).ready(function() {
+    var currentPath = window.location.pathname.split('/').slice(-1)[0];
+
+    $('.navigation li a').each(function() {
+        var linkPath = $(this).attr('href');
+        var item = linkPath.split('/').slice(-1)[0];
+
+        if (linkPath.includes("category")) {
+            if (item == currentPath) {
+                $(this).parent('li').addClass('active');
+            }
+        } else {
+            if (currentPath == '' ){
+                $(this).parent('li').addClass('active');
+        }
+    }
+    });
+});
+
 $(window).on('load', function () {
 	preloader();
 	mainSlider();
@@ -121,43 +140,43 @@ $('.header-search > a').on('click', function () {
 });
 
 
-// dark light mode toggler
-function tg_theme_toggler() {
+// // dark light mode toggler
+// function tg_theme_toggler() {
 
-    $('.switcher__mode, .switcher__btn').on("click", function () {
-        toggleTheme();
-    });
+//     $('.switcher__mode, .switcher__btn').on("click", function () {
+//         toggleTheme();
+//     });
 
-    // set toggle theme scheme
-    function tg_set_scheme(tg_theme) {
-        localStorage.setItem('tg_theme_scheme', tg_theme);
-        document.documentElement.setAttribute("tg-theme", tg_theme);
-    }
+//     // set toggle theme scheme
+//     function tg_set_scheme(tg_theme) {
+//         localStorage.setItem('tg_theme_scheme', tg_theme);
+//         document.documentElement.setAttribute("tg-theme", tg_theme);
+//     }
 
-    // toggle theme scheme
-    function toggleTheme() {
-        if (localStorage.getItem('tg_theme_scheme') === 'dark') {
-            tg_set_scheme('light');
-        } else {
-            tg_set_scheme('dark');
-        }
-    }
+//     // toggle theme scheme
+//     function toggleTheme() {
+//         if (localStorage.getItem('tg_theme_scheme') === 'dark') {
+//             tg_set_scheme('light');
+//         } else {
+//             tg_set_scheme('dark');
+//         }
+//     }
 
-    // set the first theme scheme
-    function tg_init_theme() {
-        if (localStorage.getItem('tg_theme_scheme') === 'dark') {
-            tg_set_scheme('dark');
-            document.querySelector('.switcher__mode, .switcher__btn').checked = true;
-        } else {
-            tg_set_scheme('light');
-            document.querySelector('.switcher__mode, .switcher__btn').checked = false;
-        }
-    }
-    tg_init_theme();
-}
-if ($(".switcher__mode, .switcher__btn").length > 0) {
-    tg_theme_toggler();
-}
+//     // set the first theme scheme
+//     function tg_init_theme() {
+//         if (localStorage.getItem('tg_theme_scheme') === 'dark') {
+//             tg_set_scheme('dark');
+//             document.querySelector('.switcher__mode, .switcher__btn').checked = true;
+//         } else {
+//             tg_set_scheme('light');
+//             document.querySelector('.switcher__mode, .switcher__btn').checked = false;
+//         }
+//     }
+//     tg_init_theme();
+// }
+// if ($(".switcher__mode, .switcher__btn").length > 0) {
+//     tg_theme_toggler();
+// }
 
 
 /*===========================================
@@ -446,76 +465,76 @@ $('.sidePost-active').slick({
 	slidesToScroll: 1,
 });
 
-/*===========================================
-	=       sideInstagram Active         =
-=============================================*/
-var sideInstaSwiper = new Swiper('.sidebarInsta-active', {
-    // Optional parameters
-    loop: true,
-    slidesPerView: 4,
-    spaceBetween: 15,
-    centerMode: true,
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: true,
-    },
-    breakpoints: {
-        '1400': {
-            slidesPerView: 4,
-        },
-        '1200': {
-            slidesPerView: 4,
-        },
-        '992': {
-            slidesPerView: 4,
-        },
-        '768': {
-            slidesPerView: 4,
-        },
-        '576': {
-            slidesPerView: 4,
-        },
-        '0': {
-            slidesPerView: 4,
-        },
-    },
-});
+// /*===========================================
+// 	=       sideInstagram Active         =
+// =============================================*/
+// var sideInstaSwiper = new Swiper('.sidebarInsta-active', {
+//     // Optional parameters
+//     loop: true,
+//     slidesPerView: 4,
+//     spaceBetween: 15,
+//     centerMode: true,
+//     autoplay: {
+//         delay: 3500,
+//         disableOnInteraction: true,
+//     },
+//     breakpoints: {
+//         '1400': {
+//             slidesPerView: 4,
+//         },
+//         '1200': {
+//             slidesPerView: 4,
+//         },
+//         '992': {
+//             slidesPerView: 4,
+//         },
+//         '768': {
+//             slidesPerView: 4,
+//         },
+//         '576': {
+//             slidesPerView: 4,
+//         },
+//         '0': {
+//             slidesPerView: 4,
+//         },
+//     },
+// });
 
 
-/*===========================================
-	=       sideInstagram Active         =
-=============================================*/
-var sideInsta2Swiper = new Swiper('.sidebarInsta-active-2', {
-    // Optional parameters
-    loop: true,
-    slidesPerView: 4,
-    spaceBetween: 15,
-    centerMode: true,
-    autoplay: {
-        delay: 3500,
-        disableOnInteraction: true,
-    },
-    breakpoints: {
-        '1400': {
-            slidesPerView: 4,
-        },
-        '1200': {
-            slidesPerView: 4,
-        },
-        '992': {
-            slidesPerView: 4,
-        },
-        '768': {
-            slidesPerView: 4,
-        },
-        '576': {
-            slidesPerView: 4,
-        },
-        '0': {
-            slidesPerView: 4,
-        },
-    },
-});
+// /*===========================================
+// 	=       sideInstagram Active         =
+// =============================================*/
+// var sideInsta2Swiper = new Swiper('.sidebarInsta-active-2', {
+//     // Optional parameters
+//     loop: true,
+//     slidesPerView: 4,
+//     spaceBetween: 15,
+//     centerMode: true,
+//     autoplay: {
+//         delay: 3500,
+//         disableOnInteraction: true,
+//     },
+//     breakpoints: {
+//         '1400': {
+//             slidesPerView: 4,
+//         },
+//         '1200': {
+//             slidesPerView: 4,
+//         },
+//         '992': {
+//             slidesPerView: 4,
+//         },
+//         '768': {
+//             slidesPerView: 4,
+//         },
+//         '576': {
+//             slidesPerView: 4,
+//         },
+//         '0': {
+//             slidesPerView: 4,
+//         },
+//     },
+// });
 
 
 /*===========================================
@@ -611,6 +630,5 @@ $(".offCanvas__menu-wrapper .dropdown-icon").on('click', function() {
     }
     $tgMenu.prev(".sub-menu").slideToggle();
 });
-
 
 })(jQuery);

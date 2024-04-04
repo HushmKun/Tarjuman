@@ -114,6 +114,7 @@
             flex-wrap: wrap;
             margin: 0 0 11px;
             & li {
+                direction: rtl;
                 margin-left: 14px;
                 padding-left: 14px;
                 position: relative;
@@ -1009,5 +1010,18 @@
                 }
             }
         }
+    }
+}
+
+.wrap {
+    display: flex;
+    flex-direction: column;
+
+    p {
+        margin-right: 75px;
+    }
+
+    hr {
+        border-bottom: var(--tg-tarjuman-three);
     }
 }

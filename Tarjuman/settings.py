@@ -2,6 +2,7 @@
 from pathlib import Path
 from dotenv import load_dotenv
 from os import environ
+
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,6 +22,11 @@ if DEBUG :
 
 INSTALLED_APPS = [
     "main",
+    "user",
+    "admin_interface",
+    "django_google_maps",
+    "colorfield",
+    'django_summernote',
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -38,6 +44,24 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
+
+SUMMERNOTE_CONFIG = {
+    'summernote' : {
+        'lang': 'ar-AR',
+    },
+    'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['insert', ['ltr','rtl']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+        ],
+    'js': ('/static/assets/js/summernote-ext-rtl.js',)
+}
 
 ROOT_URLCONF = "Tarjuman.urls"
 
@@ -60,32 +84,39 @@ TEMPLATES = [
 WSGI_APPLICATION = "Tarjuman.wsgi.application"
 
 DATABASES = {
+    # "default": {
+    #     "ENGINE": "django.db.backends.postgresql",
+    #     "NAME": environ['DBNAME'],
+    #     "USER": environ['DBUSER'],
+    #     "PASSWORD": environ['DBPASS'],
+    #     "HOST": environ['DBHOST'],
+    #     "PORT": environ['DBPORT'],
+    # },
     "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": environ['DBNAME'],
-        "USER": environ['DBUSER'],
-        "PASSWORD": environ['DBPASS'],
-        "HOST": environ['DBHOST'],
-        "PORT": environ['DBPORT'],
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    # },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    # },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    # },
+    # {
+    #     "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    # },
 ]
 
-LANGUAGE_CODE = "en-us"
+X_FRAME_OPTIONS = "SAMEORIGIN"
+SILENCED_SYSTEM_CHECKS = ["security.W019"]
+
+LANGUAGE_CODE = "ar-EG"
 
 TIME_ZONE = "UTC"
 
@@ -100,9 +131,19 @@ STATIC_ROOT = '/var/www/tarjuman.tech/static'
 
 #* Media Files Management 
 MEDIA_URL = "media/"
+MEDIA_ROOT = '/var/www/tarjuman.tech/media'
 if DEBUG : 
     MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_ROOT = '/var/www/tarjuman.tech/media'
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+GEOPOSITION_GOOGLE_MAPS_API_KEY = "AIzaSyD4oOOCJMG7hvd2mEzK4iMH3bT7tgMh8hI"
+GOOGLE_MAPS_API_KEY = "AIzaSyD4oOOCJMG7hvd2mEzK4iMH3bT7tgMh8hI"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_REDIRECT_URL = "dashboard"
+LOGOUT_REDIRECT_URL = "home"
+
+EMAIL_HOST = "localhost"
+EMAIL_PORT = 1025

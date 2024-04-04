@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href={% static 'assets/css/forms.css' %}>
+{% endblock head %}
+
+{% block content %}
+
+<div class="login-page">
+    <form method="post" enctype="multipart/form-data">
+        <div class="form">
+            <h2>إنشاء حساب</h2>
+        {% csrf_token %}
+        {{user_form}}
+        
+        {{ profile_form.profile_picture.errors}}
+        <label for="{{ profile_form.profile_picture.id_for_label }}">أختر صورة: </label>
+        {{ profile_form.profile_picture}}
+        <input type="submit" value="سجل">
+    </form>
+
+    <a href="{% url 'login' %}">عد لتسجيل الدخول</a>
+    </div>
+</div>
+{% endblock %}

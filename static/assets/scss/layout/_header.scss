@@ -4,7 +4,7 @@
 	02. Header
 ===============================*/
 .header__top {
-    padding: 40px 0 23px;
+    padding: 20px 0 20px;
     @media #{$lg} {
         padding: 25px 0 25px;
     }
@@ -285,19 +285,20 @@
             display: none;
             margin-top: 1px;
             @media #{$md} {
-                display: block;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
             }
         }
     }
 }
 .tgmenu {
     &__wrap {
-        border-top: 1px solid var(--tg-tarjuman-four);
-        border-bottom: 1px solid var(--tg-tarjuman-four);
         padding: 0 20px;
         @media #{$md} {
             @include flexbox();
-            padding: 17px 0;
+            padding: 5px;
         }
     }
     &__nav {
@@ -580,7 +581,8 @@
 .logo a {
 	display: inline-block;
     & img {
-        max-width: 109px;
+        max-width: 125px;
+        min-width: 150px;
     }
 
     &.logo-light{
@@ -617,7 +619,7 @@
     }
     @media #{$md} {
         .tgmenu__wrap {
-            padding: 20px 0;
+            padding: 0 0;
         }
     }
 }
@@ -924,4 +926,21 @@
             }
         }
     }
+}
+
+#user-data{
+    a {
+        color: var(--tg-tarjuman-four);
+        text-decoration: none;
+        
+        i {
+            font-size: x-large;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    }
+}
+
+#custom-bar {
+    width: 22% !important;
 }

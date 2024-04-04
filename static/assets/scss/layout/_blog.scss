@@ -112,11 +112,10 @@
                 @include flexbox();
             }
             & li {
-                &+li {
-                    margin-top: 14px;
-                    @media #{$md} {
-                        margin: 0 0 0 12px;
-                    }
+                
+                margin-top: 14px;
+                @media #{$md} {
+                    margin: 0 0 0 12px;
                 }
                 & a {
                     @include flexbox();
@@ -427,8 +426,54 @@ blockquote {
             display: block;
             line-height: 1;
         }
+    }        
+}
+
+
+.card {
+    width: auto;
+    padding: 10px;
+    margin: 15px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.user {
+    float: right;
+    font-size: 12px;
+    line-height: 18px;
+
+    .name {
+        font-weight: 600;
+        Color: #252a3f;
+    }
+    
+    .time {
+        font-family: 'Open Sans';
+        font-weight: 400;
+        Color: #a8aab2;
     }
 }
+
+
+.comment {
+    width: 100%;
+    position: relative;
+    float: right;
+    margin-top: 15px;
+    font-size: 12px;
+    font-family: 'Open Sans';
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    font-weight: 400;
+    Color: #252a3f;
+}
+
+.card:hover {
+    Box-shadow: 0px 0px 10px 1px var(--tg-tarjuman-five);
+}
+
 .blog {
     &-prev-next-posts {
         margin: 50px 0 0;
