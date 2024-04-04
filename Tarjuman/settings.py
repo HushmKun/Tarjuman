@@ -15,7 +15,7 @@ except KeyError as e:
     raise RuntimeError("Could not find a SECRET_KEY in environment") from e
 
 
-ALLOWED_HOSTS = [".tarjuman.tech"]
+ALLOWED_HOSTS = ["20.46.48.156"]
 
 if DEBUG : 
     ALLOWED_HOSTS.append('*')
@@ -84,14 +84,6 @@ TEMPLATES = [
 WSGI_APPLICATION = "Tarjuman.wsgi.application"
 
 DATABASES = {
-    # "default": {
-    #     "ENGINE": "django.db.backends.postgresql",
-    #     "NAME": environ['DBNAME'],
-    #     "USER": environ['DBUSER'],
-    #     "PASSWORD": environ['DBPASS'],
-    #     "HOST": environ['DBHOST'],
-    #     "PORT": environ['DBPORT'],
-    # },
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
@@ -99,18 +91,18 @@ DATABASES = {
 }
 
 AUTH_PASSWORD_VALIDATORS = [
-    # {
-    #     "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    # },
-    # {
-    #     "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    # },
-    # {
-    #     "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    # },
-    # {
-    #     "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    # },
+    {
+        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
+    },
+    {
+        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
+    },
 ]
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
@@ -127,11 +119,11 @@ USE_TZ = True
 #* Static Files Management 
 STATICFILES_DIRS = [BASE_DIR / "static"]  
 STATIC_URL = "static/"
-STATIC_ROOT = '/var/www/tarjuman.tech/static'
+STATIC_ROOT = '/var/www/tarjuman/static'
 
 #* Media Files Management 
 MEDIA_URL = "media/"
-MEDIA_ROOT = '/var/www/tarjuman.tech/media'
+MEDIA_ROOT = '/var/www/tarjuman/media'
 if DEBUG : 
     MEDIA_ROOT = BASE_DIR / 'media'
 
