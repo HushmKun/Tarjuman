@@ -174,15 +174,27 @@
                         <div class="widget sidebar-widget">
                             <h4 class="widget-title">بيانات الزيارة </h4>
                             <div class="wrap">
+                                {% if post.open_time and post.closing_time %}
                                 <h6>مواعيد العمل:</h6> 
                                 <p>من  : {{ post.open_time }} </p>
                                 <p>إلي : {{ post.closing_time }}</p>
                                 <hr>
+                                {% endif %}
+                                {% if post.Egyptian or post.Egyptian_student or post.Foreign or post.Foreign_student %}
                                 <h6>أسعار التذاكر: </h6>
-                                <p>مصري: {{ post.Egyptian }} جم</p>
-                                <p>طالب مصري: {{ post.Egyptian_student }} جم</p> 
-                                <p>أجنبي: {{ post.Foreign }} جم</p> 
-                                <p>طالب أجنبي: {{ post.Foreign_student }} جم</p>
+                                    {% if post.Egyptian %}
+                                        <p>مصري: {{ post.Egyptian }} جم</p>
+                                    {% endif %}
+                                    {% if post.Egyptian_student %}
+                                        <p>طالب مصري: {{ post.Egyptian_student }} جم</p> 
+                                    {% endif %}
+                                    {% if post.Foreign %}
+                                        <p>أجنبي: {{ post.Foreign }} جم</p> 
+                                    {% endif %}
+                                    {% if post.Foreign_student %}
+                                        <p>طالب أجنبي: {{ post.Foreign_student }} جم</p>
+                                    {% endif %}
+                                {% endif %}
                             </div>
                         </div>
                         {% if post.geolocation.lat and post.geolocation.lon %}
