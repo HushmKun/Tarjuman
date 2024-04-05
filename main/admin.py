@@ -36,7 +36,7 @@ class PostAdmin(SummernoteModelAdmin):
         (
           "محتوي الخبر",
             {
-                "fields": ["title", "ext_name", "desc", "content"],
+                "fields": ["title", "ext_name", "desc", "content", "address", ],
             },
         ),
         (
@@ -54,7 +54,7 @@ class PostAdmin(SummernoteModelAdmin):
         (
             "لا تلمس",
             {
-                "fields" : ["slug"]
+                "fields" : ["slug", "geolocation"]
             },
         ),
     ]
