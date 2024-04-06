@@ -58,8 +58,11 @@ def post(request, slug):
             comment.save()
             
             
-
-    next_posts, prev_posts = posts.order_by("?")[:2]
+    try:
+        next_posts, prev_posts = posts.order_by("?")[:2]
+    except : 
+        next_posts, prev_posts = None 
+        
     comments = Comment.objects.filter(post=post)
 
     context = {
