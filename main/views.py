@@ -61,8 +61,8 @@ def post(request, slug):
     try:
         next_posts, prev_posts = posts.order_by("?")[:2]
     except : 
-        next_posts, prev_posts = None 
-        
+        next_posts, prev_posts = None, None
+
     comments = Comment.objects.filter(post=post)
 
     context = {
