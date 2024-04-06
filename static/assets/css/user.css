@@ -19,6 +19,8 @@ a {
 .profile-user-page .img-user-profile {
     margin: 0 auto;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .profile-user-page .img-user-profile .profile-bgHome {
@@ -34,7 +36,6 @@ a {
     height: 7em;
     padding: 0.25em;
     border-radius: .4em;
-    margin-top: -10em;
     box-shadow: 0 0 .1em rgba(0, 0, 0, 0.35);
 }
 
