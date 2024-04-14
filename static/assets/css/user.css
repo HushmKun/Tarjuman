@@ -6,6 +6,7 @@ a {
 .content-profile-page {
     margin: 1em auto;
     width: auto;
+    max-width: 45em;
 }
 
 .card {

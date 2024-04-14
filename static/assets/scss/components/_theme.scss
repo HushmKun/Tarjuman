@@ -121,11 +121,10 @@ h6 {
 }
 .list-wrap,
 .slick-dots {
-	margin: 0px;
+	margin: 10px;
 	padding: 0px;
 	& li {
 		list-style: none;
-		direction: ltr;
 	}
 }
 .tgcommon__hover {

@@ -171,13 +171,12 @@ h6 {
 
 .list-wrap,
 .slick-dots {
-  margin: 0px;
+  margin: 10px;
   padding: 0px;
 }
 .list-wrap li,
 .slick-dots li {
   list-style: none;
-  direction: ltr;
 }
 
 .tgcommon__hover a {
@@ -1591,6 +1590,9 @@ input[type=color] {
   max-width: 125px;
   min-width: 150px;
   padding: 5px 5px 5px 46px;
+  margin-right: 8px;
+  left: 23%;
+  position: relative;
 }
 .logo a.logo-light {
   display: none;
@@ -1926,10 +1928,6 @@ input[type=color] {
   font-size: x-large;
   padding-left: 10px;
   padding-right: 10px;
-}
-
-#custom-bar {
-  width: 22% !important;
 }
 
 /*=============================
