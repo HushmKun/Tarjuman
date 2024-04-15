@@ -202,17 +202,19 @@
                         </p>
                         <br>
                         <p>
-                            رئيس مجلس الإدارة:
+                            رئيس مجلس الإدارة – عميد كلية الاعلام : 
                             <br>
-                            أ.د.أمين سعيد عميد الكلية
+                            أ.د.أمين سعيد
                             <br>
-                            إشراف عام :
+                            إشراف عام – رئيس قسم الصحافة :
                             <br>
-                            أ.د.حسين ربيع رئيس قسم الصحافة
+                            أ.م.د. حسين ربيع 
                             <br>
-                            إشراف: أ.رانيا الشبراوى
+                            إشراف:
                             <br>
-                            مستشارا التحرير
+                            أ.رانيا الشبراوى
+                            <br>
+                            مستشارا التحرير:
                             <br>
                             د.سمر علي
                             <br>
@@ -220,9 +222,9 @@
                         </p>
                         <br>
                         <p>
-                            رئيس التحرير:محمد السيد
+                            رئيس التحرير: محمد السيد
                             <br>
-                            نائب رئيس التحرير:أحمد ماجد
+                            نائب رئيس التحرير: أحمد ماجد
                             <br>
                             المحررين:
                             <br>
@@ -237,9 +239,12 @@
                     </div>
                     <div class="offCanvas__contact">
                         <h4 class="title">تواصل  معنا</h4>
-                        <ul class="offCanvas__contact-list list-wrap">
+                        <ul class="offCanvas__contact-list list-wrap ltr">
                             <li>
                                 <i class="fas fa-envelope-open"></i><a href="mailto:info@webmail.com">info@webmail.com</a>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone"></i><a href="mailto:info@webmail.com">+201023456789</a>
                             </li>
                             <li>
                                 <i class="fas fa-map-marker-alt"></i>كلية إعلام، جامعة السويس، السويس
@@ -257,6 +262,9 @@
                             </li>
                             <li>
                                 <a href="https://www.youtube.com/channel/UCGyLdCXfQkEi0amUHFVq4gw"><i class="fab fa-youtube"></i></a>
+                            </li>
+                            <li>
+                                <a href="https://www.tiktok.com/@turjmaan"><i class="fab fa-tiktok"></i></a>
                             </li>
                         </ul>
                     </div>
@@ -367,15 +375,21 @@
                         <div class="col-lg-9 col-md-8">
                             <div class="footer__social">
                                 <ul class="list-wrap">
-                                    <li>
-                                        <a href="https://www.facebook.com/profile.php?id=61557292679605"><i class="fab fa-facebook-f"></i> Facebook <span>25K</span></a>
                                     </li>
-                                    <li>
-                                        <a href="https://twitter.com/turjmaan1"><i class="fab fa-twitter"></i> Twitter <span>44K</span></a>
+                                    <li class="ltr">
+                                        <a href="https://www.tiktok.com/@turjmaan"><i class="fa-brands fa-tiktok"></i> Tiktok <span>1K</span></a>
                                     </li>
-                                    <li>
-                                        <a href="https://www.youtube.com/channel/UCGyLdCXfQkEi0amUHFVq4gw"><i class="fab fa-youtube"></i> Youtube <span>91K</span></a>
+                                    <li class="ltr">
+                                        <a href="https://www.instagram.com/turjmaan/"><i class="fa-brands fa-instagram"></i> Instagram <span>1K</span></a>
                                     </li>
+                                    <li class="ltr">
+                                        <a href="https://www.facebook.com/profile.php?id=61557292679605"><i class="fab fa-facebook-f"></i> Facebook <span>2K</span></a>
+                                    </li>
+                                    <li class="ltr">
+                                        <a href="https://twitter.com/turjmaan1"><i class="fab fa-twitter"></i> Twitter <span>1K</span></a>
+                                    </li>
+                                    <li class="ltr">
+                                        <a href="https://www.youtube.com/channel/UCGyLdCXfQkEi0amUHFVq4gw"><i class="fab fa-youtube"></i> Youtube <span>1K</span></a>
                                 </ul>
                             </div>
                         </div>
@@ -394,13 +408,13 @@
                             <div class="copyright__menu">
                                 <ul class="list-wrap">
                                     <li>
-                                        <a href="#">تواصل معنا</a>
+                                        <a href="{% url 'usage'%}#usage">سياسة الاستخدام</a>
                                     </li>
                                     <li>
-                                        <a href="#">سياسة الاستخدام</a>
+                                        <a href="{% url 'usage'%}#non">إخلاء المسؤولية</a>
                                     </li>
                                     <li>
-                                        <a href="#">إعلن معنا</a>
+                                        <a href="{% url 'usage'%}#ad">إعلن معنا</a>
                                     </li>
                                 </ul>
                             </div>
@@ -424,6 +438,7 @@
         <script src={% static 'assets/js/ajax-form.js' %}></script>
         <script src={% static 'assets/js/wow.min.js' %}></script>
         <script src={% static 'assets/js/main.js' %}></script>
+        <script src="https://kit.fontawesome.com/12d0346ec6.js" crossorigin="anonymous"></script>
         {% block script %}
         {% endblock script %}
     </body>

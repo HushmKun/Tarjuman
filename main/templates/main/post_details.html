@@ -40,7 +40,7 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-1">
                         <div class="blog-details-social">
-                            <ul class="list-wrap">
+                            <ul class="list-wrap" style="direction:rtl;">
                                 <li>
                                     <a href="https://www.facebook.com/profile.php?id=61557292679605"><i class="fab fa-facebook-f"></i></a>
                                 </li>
@@ -51,7 +51,10 @@
                                     <a href="https://www.instagram.com/turjmaan/"><i class="fab fa-instagram"></i></a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fas fa-share"></i></a>
+                                    <a href="https://www.tiktok.com/@turjmaan"><i class="fa-brands fa-tiktok"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCGyLdCXfQkEi0amUHFVq4gw"><i class="fa-brands fa-youtube"></i></a>
                                 </li>
                             </ul>
                         </div>
@@ -104,6 +107,9 @@
                                                 </li>
                                                 <li>
                                                     <a href="https://www.youtube.com/channel/UCGyLdCXfQkEi0amUHFVq4gw"><i class="fab fa-youtube"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="https://www.tiktok.com/@turjmaan"><i class="fa-brands fa-tiktok"></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -166,33 +172,33 @@
             <div class="col-xl-3 col-lg-4 col-md-6">
                 <aside class="blog-sidebar">
                         <div class="widget sidebar-widget">
-                            <h4 class="widget-title">بيانات الزيارة </h4>
+                            <h4 class="widget-title text-center">بيانات الزيارة </h4>
                             <div class="wrap">
                                 {% if post.open_time and post.closing_time %}
-                                <h6>مواعيد العمل:</h6> 
-                                <p>من  : {{ post.open_time }} </p>
-                                <p>إلي : {{ post.closing_time }}</p>
+                                <h6 class="text-center me-0">مواعيد العمل</h6> 
+                                <p class="text-center me-0">من: {{ post.open_time }}</p>
+                                <p class="text-center me-0">إلي: {{ post.closing_time }}</p>
                                 <hr>
                                 {% endif %}
                                 {% if post.Egyptian or post.Egyptian_student or post.Foreign or post.Foreign_student %}
-                                <h6>أسعار التذاكر: </h6>
+                                <h6 class="text-center me-0">أسعار التذاكر </h6>
                                     {% if post.Egyptian %}
-                                        <p>مصري: {{ post.Egyptian }} جم</p>
+                                        <p class="text-center me-0">مصري: {{ post.Egyptian }} جم</p>
                                     {% endif %}
                                     {% if post.Egyptian_student %}
-                                        <p>طالب مصري: {{ post.Egyptian_student }} جم</p> 
+                                        <p class="text-center me-0">طالب مصري: {{ post.Egyptian_student }} جم</p> 
                                     {% endif %}
                                     {% if post.Foreign %}
-                                        <p>أجنبي: {{ post.Foreign }} جم</p> 
+                                        <p class="text-center me-0">أجنبي: {{ post.Foreign }} جم</p> 
                                     {% endif %}
                                     {% if post.Foreign_student %}
-                                        <p>طالب أجنبي: {{ post.Foreign_student }} جم</p>
+                                        <p class="text-center me-0">طالب أجنبي: {{ post.Foreign_student }} جم</p>
                                     {% endif %}
                                 {% endif %}
                             </div>
                         </div>
                         {% if post.geolocation.lat and post.geolocation.lon %}
-                            <h4 class="widget-title">خريطة للمكان</h4>
+                            <h4 class="widget-title text-center">خريطة للمكان</h4>
                             <div class="widget sidebar-widget">
                                 <div id="map" style="height: 400px; width: 100%;"></div>
                             </div>
@@ -209,7 +215,7 @@
 
 {% block script %}
     <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "AIzaSyAsb1BvZZ9qCs8IeZwAnVdGRZGtdoR2mt8", v: "weekly"});
+        ({key: "{{ google }}", v: "weekly"});
     </script>
     <script>
         let map;

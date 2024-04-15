@@ -38,11 +38,22 @@
                 <div class="row justify-content-center">
                     <div class="col-lg-1">
                         <div class="blog-details-social">
-                            <ul class="list-wrap">
-                                <li><a href="https://www.facebook.com/profile.php?id=61557292679605"><i class="fab fa-facebook"></i></a></li>
-                                <li><a href="https://twitter.com/turjmaan1"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="https://www.youtube.com/channel/UCGyLdCXfQkEi0amUHFVq4gw"><i class="fab fa-youtube"></i></a></li>
-                                <li><a href="#"><i class="fas fa-share"></i></a></li>
+                            <ul class="list-wrap" style="direction:rtl;">
+                                <li>
+                                    <a href="https://www.facebook.com/profile.php?id=61557292679605"><i class="fab fa-facebook-f"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://twitter.com/turjmaan1"><i class="fab fa-twitter"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.instagram.com/turjmaan/"><i class="fab fa-instagram"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.tiktok.com/@turjmaan"><i class="fa-brands fa-tiktok"></i></a>
+                                </li>
+                                <li>
+                                    <a href="https://www.youtube.com/channel/UCGyLdCXfQkEi0amUHFVq4gw"><i class="fa-brands fa-youtube"></i></a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -50,7 +61,7 @@
                         <div class="blog-post-wrapper">
                             {% include 'includes/post_item.html' with posts=page_obj %}
                             <div class="pagination__wrap">
-                                <ul class="list-wrap">
+                                <ul class="list-wrap" style="direction:rtl;">
                                     {% if page_obj.has_previous %}
                                         <li><a href="?page=1"><i class="fas fa-angle-double-right"></i></a></li>
                                         <li><a href="?page={{page_obj.previous_page_number}}"><i class="fas fa-angle-right"></i></a></li>

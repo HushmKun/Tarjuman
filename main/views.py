@@ -2,6 +2,7 @@ from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Post, Author, Category, Comment
 import random
+from django.conf import settings 
 
 
 # Create your views here.
@@ -71,5 +72,9 @@ def post(request, slug):
         "prev_post": prev_posts,
         "next_post": next_posts,
         "comments": comments,
+        "google" : settings.GOOGLE_MAPS_API_KEY
     }
     return render(request, "main/post_details.html", context)
+
+def usage(request):
+    return render(request, "main/usage.html")

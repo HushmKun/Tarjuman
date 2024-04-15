@@ -56,17 +56,17 @@ class Post(models.Model):
     main_img = models.ImageField(upload_to="posts", height_field=None, width_field=None, max_length=None, verbose_name="الصورة الخارجية")
     content = models.TextField(verbose_name="المحتوي")
     desc = models.TextField(verbose_name="المختصر ")
-    address = map_fields.AddressField(max_length=200, null=True, verbose_name="العنوان")
-    geolocation = map_fields.GeoLocationField(max_length=100, null=True, verbose_name="الموقع الجغرافي")
+    address = map_fields.AddressField(max_length=200, null=True, blank=True, verbose_name="العنوان")
+    geolocation = map_fields.GeoLocationField(max_length=100, null=True, blank=True, verbose_name="الموقع الجغرافي")
     tags = models.ManyToManyField("Tag", verbose_name="العلامة")
     
-    Egyptian = models.IntegerField(null=True, verbose_name="مصري")
-    Egyptian_student = models.IntegerField(null=True, verbose_name="طالب مصري")
-    Foreign = models.IntegerField(null=True, verbose_name="أجنبي")
-    Foreign_student = models.IntegerField(null=True, verbose_name="طالب أجنبي")
+    Egyptian = models.IntegerField(null=True, blank=True, verbose_name="مصري")
+    Egyptian_student = models.IntegerField(null=True, blank=True, verbose_name="طالب مصري")
+    Foreign = models.IntegerField(null=True, blank=True, verbose_name="أجنبي")
+    Foreign_student = models.IntegerField(null=True, blank=True, verbose_name="طالب أجنبي")
 
-    open_time = models.TimeField(auto_now=False, auto_now_add=False, null=True, verbose_name="يفتح")
-    closing_time = models.TimeField(auto_now=False, auto_now_add=False, null=True, verbose_name="يغلق")
+    open_time = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True, verbose_name="يفتح")
+    closing_time = models.TimeField(auto_now=False, auto_now_add=False, null=True, blank=True, verbose_name="يغلق")
 
 
     class Meta:

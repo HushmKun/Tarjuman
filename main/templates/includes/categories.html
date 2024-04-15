@@ -1,8 +1,8 @@
 {% load static %}
 
 <div class="widget sidebar-widget widget_categories">
-    <h4 class="widget-title">جميع الأقسام</h4>
-    <ul class="list-wrap">
+    <h4 class="widget-title text-center">جميع الأقسام</h4>
+    <ul class="list-wrap ltr">
         {% for cat in categories %}
         <li>
             <span class="float-right">{{ cat.posts.count }}</span>

@@ -10,7 +10,7 @@
             <div class="stories-post__content video__post-content">
                 <ul class="tgbanner__content-meta list-wrap">
                     <li class="category"><a href={% url 'category' post.category.eng_name%}>{{post.category}}</a></li>
-                    <li><span class="by">بقلم</span> <a href="blog.html">{{post.author}}</a></li>   {% comment %}! Author url{% endcomment %} 
+                    <li><span class="by">بقلم</span>{{post.author}}</li>  
                     <li>{{post.date}}</li>
                 </ul>
                 <h3 class="title tgcommon__hover"><a href={% url 'post' post.slug %}>{{ post.ext_name }}</a></h3>

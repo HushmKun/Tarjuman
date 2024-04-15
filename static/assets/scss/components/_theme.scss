@@ -119,10 +119,19 @@ h5 {
 h6 {
 	font-size: 1rem;
 }
+
+.rtl{
+	direction: rtl !important;
+}
+.ltr{
+	direction: ltr !important;
+}
+
 .list-wrap,
 .slick-dots {
 	margin: 10px;
 	padding: 0px;
+	direction: rtl;
 	& li {
 		list-style: none;
 	}
