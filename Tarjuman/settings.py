@@ -16,6 +16,7 @@ except KeyError as e:
 
 
 ALLOWED_HOSTS = ["20.46.48.156", ".turjman.site"]
+CSRF_TRUSTED_ORIGINS = ['https://turjman.site', 'https://www.turjman.site']
 
 if DEBUG : 
     ALLOWED_HOSTS.append('*')
