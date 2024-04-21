@@ -6,3 +6,4 @@ data.json
 venv/
 migrations/
 media/
+scss/
