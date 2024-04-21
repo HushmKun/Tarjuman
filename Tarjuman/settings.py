@@ -10,7 +10,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 try:
     SECRET_KEY = environ["SECRET_KEY"]
-    DEBUG = environ["DEBUG"]
+    DEBUG = environ["DEBUG"] == "True"
 except KeyError as e:
     raise RuntimeError("Could not find a SECRET_KEY in environment") from e
 
