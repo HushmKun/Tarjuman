@@ -739,8 +739,6 @@ input[type=color] {
   gap: 0 20px;
   color: var(--tg-common-color-black);
   margin: 0 0 8px;
-  text-align: end;
-  width: 100%;
 }
 .offCanvas__contact-list li i {
   color: #c0bfbf;
@@ -1602,7 +1600,7 @@ input[type=color] {
   min-width: 150px;
   padding: 5px 5px 5px 46px;
   margin-right: 8px;
-  left: 23%;
+  left: 8%;
   position: relative;
 }
 .logo a.logo-light {
@@ -1939,6 +1937,14 @@ input[type=color] {
   font-size: x-large;
   padding-left: 10px;
   padding-right: 10px;
+}
+
+.text-just {
+  text-align: justify;
+}
+
+.text-bold {
+  font-weight: bold;
 }
 
 /*=============================
@@ -2378,6 +2384,7 @@ input[type=color] {
 }
 .tgbanner__content-meta li .by {
   color: var(--tg-tarjuman-three);
+  padding: 0 14px 0 14px;
 }
 .tgbanner__content-meta li:last-child {
   margin-right: 0;
@@ -4082,7 +4089,7 @@ input[type=color] {
   }
 }
 .stories-post__thumb img {
-  height: 340px;
+  height: 380px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;

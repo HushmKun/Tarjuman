@@ -16,8 +16,8 @@ def home(request):
         "main_post": items[0],
         "smaller_posts": items[1:3],
         "slider_posts": items[3:8],
-        "editors_choice": items[8:14],
-        "popular_stories": items[14:20],
+        "editors_choice": items[8:13],
+        "popular_stories": items[13:19],
     }
     return render(request, "main/index.html", context)
 
