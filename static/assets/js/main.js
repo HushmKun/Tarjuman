@@ -272,7 +272,7 @@ $('.tgslider__active').slick({
     slidesToShow: 1,
 	slidesToScroll: 1,
     appendArrows: '.tgslider__nav',
-    prevArrow: '<button type="button" class="slick-prev"><i class="far fa-long-arrow-left"></i></button>',
+    prevArrow: '<button type="button" class="slick-prev"><i class="fa-solid fa-arrow-left-long"></i></button>',
 	nextArrow: '<button type="button" class="slick-next"><i class="far fa-long-arrow-right"></i></button>',
     responsive: [
 		{

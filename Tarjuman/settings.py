@@ -15,7 +15,7 @@ except KeyError as e:
     raise RuntimeError("Could not find a SECRET_KEY in environment") from e
 
 
-ALLOWED_HOSTS = ["20.46.48.156", ""]
+ALLOWED_HOSTS = ["20.46.48.156", ".turjman.site"]
 
 if DEBUG : 
     ALLOWED_HOSTS.append('*')
