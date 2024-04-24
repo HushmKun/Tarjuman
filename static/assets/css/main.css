@@ -2371,10 +2371,10 @@ input[type=color] {
 }
 .tgbanner__content-meta li {
   direction: rtl;
-  margin-left: 14px;
-  padding-left: 14px;
+  margin-left: 7px;
+  padding-left: 7px;
   position: relative;
-  font-size: 14px;
+  font-size: 11px;
   font-weight: var(--tg-fw-bold);
   color: var(--tg-heading-color);
   text-transform: uppercase;
