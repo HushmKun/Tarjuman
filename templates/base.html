@@ -11,20 +11,16 @@
         <meta name="description" content="Turjman: You're portal in Cairo">
         <meta name="description" content="ترجمان : بوابتك للقاهرة">
         <meta name="Keywords" content="Turjman | Cairo | History | ترجمان | القاهرة | التاريخ">
-        {% comment %} <meta name="description" content="Turjman: You're portal in Cairo"> {% endcomment %}
-        {% comment %} <meta name="description" content="Turjman: You're portal in Cairo"> {% endcomment %}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon"
-              type="image/x-icon"
-              href="{% static 'assets/img/favicon.ico' %}">
+        <link rel="shortcut icon" type="image/x-icon" href={% static 'assets/img/favicon.ico' %}>
         {% block head %}
         {% endblock head %}
         <!-- CSS here -->
         <link rel="stylesheet" href={% static 'assets/css/bootstrap.min.css' %}>
         <link rel="stylesheet" href={% static 'assets/css/animate.min.css' %}>
         <link rel="stylesheet" href={% static 'assets/css/magnific-popup.css' %}>
-        <link rel="stylesheet"
-              href="{% static 'assets/css/fontawesome-all.min.css' %}">
+        <link rel="stylesheet" href={% static 'assets/css/fontawesome-all.min.css' %}>
         <link rel="stylesheet" href={% static 'assets/css/imageRevealHover.css' %}>
         <link rel="stylesheet" href={% static 'assets/css/swiper-bundle.css' %}>
         <link rel="stylesheet" href={% static 'assets/css/flaticon.css' %}>
@@ -136,9 +132,6 @@
                             <!-- Mobile Menu  -->
                             <div class="tgmobile__menu">
                                 <nav class="tgmobile__menu-box">
-                                    <div class="close-btn">
-                                        <i class="fas fa-times"></i>
-                                    </div>
                                     <div class="nav-logo">
                                         <a href={% url 'home' %} class="logo-dark">
                                             <img src={% static 'assets/img/logo/logo.png' %} alt="Logo">
@@ -147,11 +140,14 @@
                                             <img src={% static 'assets/img/logo/w_logo.png' %} alt="Logo">
                                         </a>
                                     </div>
+                                    <div class="close-btn">
+                                        <i class="fas fa-times"></i>
+                                    </div>
                                     <div class="tgmobile__search">
                                         <form action="#">
                                             <input type="text" placeholder="Search here...">
                                             <button>
-                                                <i class="far fa-search"></i>
+                                                <i class="fa-solid fa-magnifying-glass"></i>
                                             </button>
                                         </form>
                                     </div>
@@ -211,13 +207,13 @@
                                                 المحررين:
                                             </span>
                                             <br>
-                                            سارة منصور
+                                            خالد أحمد
                                             <br>
                                             سهيلة عاطف
                                             <br>
                                             حنين عبد الرحمن
                                             <br>
-                                            خالد أحمد
+                                            سارة منصور
                                         </p>
                                     </div>
                                     <div class="social-links">
@@ -312,13 +308,13 @@
                                 المحررين:
                             </span>
                             <br>
-                            سارة منصور
+                            خالد أحمد
                             <br>
                             سهيلة عاطف
                             <br>
                             حنين عبد الرحمن
                             <br>
-                            خالد أحمد
+                            سارة منصور
                         </p>
                     </div>
                     <div class="offCanvas__contact">
@@ -460,9 +456,11 @@
                         <div class="col-lg-9 col-md-8">
                             <div class="footer__social">
                                 <ul class="list-wrap">
-                                    </li>
                                     <li class="ltr">
                                         <a href="https://www.tiktok.com/@turjmaan"><i class="fa-brands fa-tiktok"></i> Tiktok <span>1K</span></a>
+                                    </li>
+                                    <li class="ltr">
+                                        <a href="https://twitter.com/turjmaan1"><i class="fab fa-twitter"></i> Twitter <span>1K</span></a>
                                     </li>
                                     <li class="ltr">
                                         <a href="https://www.instagram.com/turjmaan/"><i class="fa-brands fa-instagram"></i> Instagram <span>1K</span></a>
@@ -471,10 +469,8 @@
                                         <a href="https://www.facebook.com/profile.php?id=61557292679605"><i class="fab fa-facebook-f"></i> Facebook <span>2K</span></a>
                                     </li>
                                     <li class="ltr">
-                                        <a href="https://twitter.com/turjmaan1"><i class="fab fa-twitter"></i> Twitter <span>1K</span></a>
-                                    </li>
-                                    <li class="ltr">
                                         <a href="https://www.youtube.com/channel/UCGyLdCXfQkEi0amUHFVq4gw"><i class="fab fa-youtube"></i> Youtube <span>1K</span></a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>
@@ -493,13 +489,13 @@
                             <div class="copyright__menu">
                                 <ul class="list-wrap">
                                     <li>
-                                        <a href="{% url 'usage'%}#usage">سياسة الاستخدام</a>
+                                        <a href="{% url 'usage' %}#usage">سياسة الاستخدام</a>
                                     </li>
                                     <li>
-                                        <a href="{% url 'usage'%}#non">إخلاء المسؤولية</a>
+                                        <a href="{% url 'usage' %}#non">إخلاء المسؤولية</a>
                                     </li>
                                     <li>
-                                        <a href="{% url 'usage'%}#ad">إعلن معنا</a>
+                                        <a href="{% url 'usage' %}#ad">إعلن معنا</a>
                                     </li>
                                 </ul>
                             </div>

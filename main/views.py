@@ -46,7 +46,8 @@ def post(request, slug):
     categories = Category.objects.all().order_by("order")
 
     posts = Post.objects.all()
-    post = posts.get(slug=slug)
+        
+    post = get_object_or_404(Post, slug=slug)
 
     if request.method == "POST":
 

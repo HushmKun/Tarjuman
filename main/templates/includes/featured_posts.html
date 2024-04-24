@@ -4,11 +4,11 @@
     {% for post in posts %}
     <div class="col-lg-4 col-sm-6">
         <div class="featured__post">
-            <div class="featured__thumb" data-background="{{ post.main_img.url}}"></div>
+            <div class="featured__thumb" data-background="{{ post.main_img.url }}"></div>
             <div class="featured__content">
                 <ul class="tgbanner__content-meta list-wrap">
                     <li class="category"><a class="ps-3" href={% url 'category' post.category.eng_name %}>{{ post.category }}</a></li>
-                    <li><span class="by"> بواسطة </span>{{ post.author}}</li>
+                    <li><span class="by"> {% if "مقالات" in post.tags.all %} بقلم {% else %} كتب {% endif %} </span>{{ post.author.all|random }}</li>
                 </ul>
                 <h4 class="title tgcommon__hover"><a href={% url 'post' post.slug %}>{{ post.ext_name }}</a></h4>
             </div>

@@ -854,9 +854,6 @@ input[type=color] {
   gap: 5px 13px;
   margin: 0 0;
 }
-.breadcrumb-area {
-  margin: -1px 0 0;
-}
 .breadcrumb-content {
   background: var(--tg-common-color-white);
   padding: 24px 30px;
@@ -2007,7 +2004,7 @@ input[type=color] {
 .tgmobile__menu .nav-logo {
   position: relative;
   padding: 30px 25px;
-  text-align: left;
+  text-align: right;
 }
 .tgmobile__menu .nav-logo img {
   width: 109px;
@@ -2134,7 +2131,7 @@ input[type=color] {
 }
 .tgmobile__menu .close-btn {
   position: absolute;
-  right: 15px;
+  right: 245px;
   top: 28px;
   line-height: 30px;
   width: 35px;
@@ -2384,7 +2381,6 @@ input[type=color] {
 }
 .tgbanner__content-meta li .by {
   color: var(--tg-tarjuman-three);
-  padding: 0 14px 0 14px;
 }
 .tgbanner__content-meta li:last-child {
   margin-right: 0;
@@ -5285,7 +5281,7 @@ blockquote .blockquote-cite .info span {
 }
 .pn-post-item .thumb {
   flex: 0 0 auto;
-  margin-right: 25px;
+  margin-left: 25px;
 }
 .pn-post-item .thumb img {
   width: 100px;
@@ -5322,8 +5318,8 @@ blockquote .blockquote-cite .info span {
   }
 }
 .pn-post-item.next-post .thumb {
-  margin-right: 0;
-  margin-left: 25px;
+  margin-left: 0;
+  margin-right: 25px;
 }
 .pn-post-item.next-post .content {
   margin-left: 50px;
@@ -5608,6 +5604,25 @@ blockquote .blockquote-cite .info span {
   margin: 0 0;
 }
 
+.dp-none {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  .dp-none {
+    display: block;
+    width: 100% !important;
+  }
+}
+.dp-ok {
+  display: block;
+}
+
+@media (max-width: 991px) {
+  .dp-ok {
+    display: none;
+  }
+}
 /*=============================
     17. Newsletter Post
 ===============================*/

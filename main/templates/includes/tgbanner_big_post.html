@@ -2,12 +2,14 @@
 
 <div class="tgbanner__post big-post">
     <div class="tgbanner__thumb tgImage__hover">
-        <a href={% url 'post' post.slug %}><img src={{post.main_img.url}}  alt="img"></a>
+        <a href={% url 'post' post.slug %}><img src={{ post.main_img.url }}  alt="img"></a>
     </div>
     <div class="tgbanner__content">
         <ul class="tgbanner__content-meta list-wrap">
             <li class="category"><a href={% url 'category' post.category.eng_name %}>{{ post.category }}</a></li>
-            <li><span class="by">بواسطة </span>{{ post.author}}</li> {% comment %}! Author url{% endcomment %}
+            {% for author in post.author.all|slice:":1" %}
+            <li><span class="by">{% if "مقالات" in post.tags.all %} بقلم {% else %} كتب {% endif %} </span>{{ author }}</li> 
+            {% endfor %}
             <li>{{ post.date }}</li>
         </ul>
         <h2 class="title tgcommon__hover" dir="rtl"><a href={% url 'post' post.slug %}>{{ post.ext_name }}</a></h2>

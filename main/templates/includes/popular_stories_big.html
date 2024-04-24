@@ -9,9 +9,9 @@
             </div>
             <div class="stories-post__content video__post-content">
                 <ul class="tgbanner__content-meta list-wrap">
-                    <li class="category"><a href={% url 'category' post.category.eng_name%}>{{post.category}}</a></li>
-                    <li><span class="by">بقلم </span>{{post.author}}</li>  
-                    <li>{{post.date}}</li>
+                    <li class="category"><a href={% url 'category' post.category.eng_name %}>{{ post.category }}</a></li>
+                    <li><span class="by">{% if "مقالات" in post.tags.all %} بقلم {% else %} كتب {% endif %} </span>{{ post.author.all|random }}</li>  
+                    <li>{{ post.date }}</li>
                 </ul>
                 <h3 class="title tgcommon__hover"><a href={% url 'post' post.slug %}>{{ post.ext_name }}</a></h3>
             </div>

@@ -45,10 +45,10 @@
                                     <a href="https://www.facebook.com/profile.php?id=61557292679605"><i class="fab fa-facebook-f"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://twitter.com/turjmaan1"><i class="fab fa-twitter"></i></a>
+                                    <a href="https://twitter.com/turjmaan1"><i class="fa-brands fa-twitter"></i></a>
                                 </li>
                                 <li>
-                                    <a href="https://www.instagram.com/turjmaan/"><i class="fab fa-instagram"></i></a>
+                                    <a href="https://www.instagram.com/turjmaan/"><i class="fa-brands fa-instagram"></i></a>
                                 </li>
                                 <li>
                                     <a href="https://www.tiktok.com/@turjmaan"><i class="fa-brands fa-tiktok"></i></a>
@@ -66,14 +66,18 @@
                                     <a href={% url 'category' post.category.eng_name %}>{{ post.category }}</a>
                                 </li>
                                 <li>
-                                    <span class="by"> بواسطة </span><a href="#">{{ post.author }}</a>
+                                    <span class="by">{% if "مقالات" in post.tags %} بقلم {% else %} كتب {% endif %}</span>
+                                    {% for author in post.author.all %}
+                                        <a href="#">
+                                            {{ author }}
+                                            {% if not forloop.last %}-{% endif %}
+                                        </a>
+                                    {% endfor %}
                                 </li>
                                 <li>{{ post.date }}</li>
-                                <li>{{ post.comment}} تعليق</li>
+                                <li>{{ comments.count }} إعجاب</li>
                             </ul>
-                                <div>
-                                    {{ post.title|safe }}
-                                </div>
+                            <div>{{ post.title|safe }}</div>
                             <div class="blog-details-thumb">
                                 <img src={{ post.main_img.url }} alt="">
                             </div>
@@ -84,11 +88,10 @@
                                         <div class="blog-details-tags">
                                             <ul class="list-wrap mb-0">
                                                 {% for tag in post.tags.all %}
-                                                <li>
-                                                    <a href="#">{{ tag.caption }}</a>
-                                                </li>
+                                                    <li>
+                                                        <a href="#">{{ tag.caption }}</a>
+                                                    </li>
                                                 {% endfor %}
-                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -115,24 +118,54 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-xl-3 col-lg-4 col-md-6 dp-none">
+                                    <aside class="blog-sidebar">
+                                        <div class="widget sidebar-widget">
+                                            <h4 class="widget-title text-center">بيانات الزيارة</h4>
+                                            <div class="wrap">
+                                                {% if post.open_time and post.closing_time %}
+                                                    <h6 class="text-center me-0">مواعيد العمل</h6>
+                                                    <p class="text-center me-0">من: {{ post.open_time }}</p>
+                                                    <p class="text-center me-0">إلي: {{ post.closing_time }}</p>
+                                                    <hr>
+                                                {% endif %}
+                                                {% if post.Egyptian or post.Egyptian_student or post.Foreign or post.Foreign_student %}
+                                                    <h6 class="text-center me-0">أسعار التذاكر</h6>
+                                                    {% if post.Egyptian %}<p class="text-center me-0">مصري: {{ post.Egyptian }} جم</p>{% endif %}
+                                                    {% if post.Egyptian_student %}<p class="text-center me-0">طالب مصري: {{ post.Egyptian_student }} جم</p>{% endif %}
+                                                    {% if post.Foreign %}<p class="text-center me-0">أجنبي: {{ post.Foreign }} جم</p>{% endif %}
+                                                    {% if post.Foreign_student %}<p class="text-center me-0">طالب أجنبي: {{ post.Foreign_student }} جم</p>{% endif %}
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        {% if post.geolocation.lat and post.geolocation.lon %}
+                                        <div class="widget sidebar-widget">
+                                                <h4 class="widget-title text-center">خريطة للمكان</h4>
+                                                <div id="map" class="GMaps" style="height: 400px; width: 100%;"></div>
+                                            </div>
+                                        {% endif %}
+                                    </aside>
+                                </div>
                                 {% include "includes/comments.html" with comments=comments %}
                             </div>
                             <div class="blog-avatar-wrap">
+                                {% for author in post.author.all|slice:":1" %}
                                 <div class="blog-avatar-img">
-                                    {% if post.author.img %}
-                                        <a href="#"><i class="far fa-check"></i><img src={{ post.author.img.url }} alt="img"></a>
+                                    {% if author.img %}
+                                    <a href="#"><i class="fa-solid fa-check"></i><img src={{ author.img.url }} alt="img"></a>
                                     {% else %}
-                                    <a href="#"><i class="far fa-check"></i>
-                                    <img src={% static 'assets/img/others/avatar.png' %} alt="img">
-                                </a>
-                            {% endif %}
-                        </div>
-                        <div class="blog-avatar-content">
-                            <p>{{ post.author.desc }}</p>
-                            <h5 class="name">{{ post.author.name }}</h5>
-                            <span class="designation">{{ post.author.pos }}</span>
-                        </div>
-                    </div>
+                                    <a href="#"><i class="fa-solid fa-check"></i>
+                                        <img src={% static 'assets/img/others/avatar.png' %} alt="img">
+                                    </a>
+                                    {% endif %}
+                                </div>
+                                <div class="blog-avatar-content">
+                                    <p>{{ author.desc }}</p>
+                                    <h5 class="name">{{ author.name }}</h5>
+                                    <span class="designation">{{ author.pos }}</span>
+                                </div>
+                                {% endfor %}
+                            </div>
                     <div class="blog-prev-next-posts">
                         <div class="row">
                             {% if prev_post %}
@@ -142,7 +175,7 @@
                                             <a href={% url 'post' prev_post.slug %}><img src={{ prev_post.main_img.url }} alt="img"></a>
                                         </div>
                                         <div class="content">
-                                            <span>Prev Post</span>
+                                            <span>المنشور السابق</span>
                                             <h5 class="title tgcommon__hover">
                                                 <a href={% url 'post' prev_post.slug %}>{{ prev_post.ext_name }}</a>
                                             </h5>
@@ -157,7 +190,7 @@
                                             <a href={% url 'post' next_post.slug %}><img src={{ next_post.main_img.url }} alt="img"></a>
                                         </div>
                                         <div class="content">
-                                            <span>Next Post</span>
+                                            <span>المنشور التالي</span>
                                             <h5 class="title tgcommon__hover">
                                                 <a href={% url 'post' next_post.slug %}>{{ next_post.ext_name }}</a>
                                             </h5>
@@ -169,77 +202,115 @@
                     </div>
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="col-xl-3 col-lg-4 col-md-6 dp-ok">
                 <aside class="blog-sidebar">
-                        <div class="widget sidebar-widget">
-                            <h4 class="widget-title text-center">بيانات الزيارة </h4>
-                            <div class="wrap">
-                                {% if post.open_time and post.closing_time %}
-                                <h6 class="text-center me-0">مواعيد العمل</h6> 
+                    <div class="widget sidebar-widget">
+                        <h4 class="widget-title text-center">بيانات الزيارة</h4>
+                        <div class="wrap">
+                            {% if post.open_time and post.closing_time %}
+                                <h6 class="text-center me-0">مواعيد العمل</h6>
                                 <p class="text-center me-0">من: {{ post.open_time }}</p>
                                 <p class="text-center me-0">إلي: {{ post.closing_time }}</p>
                                 <hr>
-                                {% endif %}
-                                {% if post.Egyptian or post.Egyptian_student or post.Foreign or post.Foreign_student %}
-                                <h6 class="text-center me-0">أسعار التذاكر </h6>
-                                    {% if post.Egyptian %}
-                                        <p class="text-center me-0">مصري: {{ post.Egyptian }} جم</p>
-                                    {% endif %}
-                                    {% if post.Egyptian_student %}
-                                        <p class="text-center me-0">طالب مصري: {{ post.Egyptian_student }} جم</p> 
-                                    {% endif %}
-                                    {% if post.Foreign %}
-                                        <p class="text-center me-0">أجنبي: {{ post.Foreign }} جم</p> 
-                                    {% endif %}
-                                    {% if post.Foreign_student %}
-                                        <p class="text-center me-0">طالب أجنبي: {{ post.Foreign_student }} جم</p>
-                                    {% endif %}
-                                {% endif %}
-                            </div>
+                            {% endif %}
+                            {% if post.Egyptian or post.Egyptian_student or post.Foreign or post.Foreign_student %}
+                                <h6 class="text-center me-0">أسعار التذاكر</h6>
+                                {% if post.Egyptian %}<p class="text-center me-0">مصري: {{ post.Egyptian }} جم</p>{% endif %}
+                                {% if post.Egyptian_student %}<p class="text-center me-0">طالب مصري: {{ post.Egyptian_student }} جم</p>{% endif %}
+                                {% if post.Foreign %}<p class="text-center me-0">أجنبي: {{ post.Foreign }} جم</p>{% endif %}
+                                {% if post.Foreign_student %}<p class="text-center me-0">طالب أجنبي: {{ post.Foreign_student }} جم</p>{% endif %}
+                            {% endif %}
                         </div>
-                        {% if post.geolocation.lat and post.geolocation.lon %}
+                    </div>
+                    {% if post.geolocation.lat and post.geolocation.lon %}
+                    <div class="widget sidebar-widget">
                             <h4 class="widget-title text-center">خريطة للمكان</h4>
-                            <div class="widget sidebar-widget">
-                                <div id="map" style="height: 400px; width: 100%;"></div>
-                            </div>
-                        {% endif %}
-                        {% include "includes/categories.html" with categories=categories %}
+                            <div id="map2" class="GMaps" style="height: 400px; width: 100%;"></div>
+                        </div>
+                    {% endif %}
+                    {% include "includes/categories.html" with categories=categories %}
                 </aside>
             </div>
         </div>
     </div>
-    </section>
-    <!-- blog-details-area-end -->
-    </main>
+</section>
+<!-- blog-details-area-end -->
+</main>
 {% endblock content %}
-
 {% block script %}
-    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
-        ({key: "{{ google }}", v: "weekly"});
+    <script>
+        (g => {
+            var h, a, k, p = "The Google Maps JavaScript API",
+                c = "google",
+                l = "importLibrary",
+                q = "__ib__",
+                m = document,
+                b = window;
+            b = b[c] || (b[c] = {});
+            var d = b.maps || (b.maps = {}),
+                r = new Set,
+                e = new URLSearchParams,
+                u = () => h || (h = new Promise(async (f, n) => {
+                    await (a = m.createElement("script"));
+                    e.set("libraries", [...r] + "");
+                    for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]);
+                    e.set("callback", c + ".maps." + q);
+                    a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+                    d[q] = f;
+                    a.onerror = () => h = n(Error(p + " could not load."));
+                    a.nonce = m.querySelector("script[nonce]")?.nonce || "";
+                    m.head.append(a)
+                }));
+            d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n))
+        })
+        ({
+            key: "{{ google }}",
+            v: "weekly"
+        });
     </script>
     <script>
         let map;
 
         async function initMap() {
-        const position = { lat: {{ post.geolocation.lat|stringformat:"f" }}, lng: {{ post.geolocation.lon|stringformat:"f" }} };
+            const position = {
+                lat: {{ post.geolocation.lat|stringformat:"f" }},
+                lng: {{ post.geolocation.lon|stringformat:"f" }}
+            };
 
-        //@ts-ignore
-        const { Map } = await google.maps.importLibrary("maps");
-        const { AdvancedMarkerElement } = await google.maps.importLibrary("marker");
+            //@ts-ignore
+            const {
+                Map
+            } = await google.maps.importLibrary("maps");
+            const {
+                AdvancedMarkerElement
+            } = await google.maps.importLibrary("marker");
 
-        // The map, centered at Uluru
-        map = new Map(document.getElementById("map"), {
-            zoom: 10,
-            center: position,
-            mapId: "DEMO_MAP",
-        });
+            // The map, centered at Uluru
+            map = new Map(document.getElementById("map"), {
+                zoom: 10,
+                center: position,
+                mapId: "DEMO_MAP",
+            });
+            // The marker, positioned at Uluru
+            const marker = new AdvancedMarkerElement({
+                map: map,
+                position: position,
+                title: "Uluru",
+            });
 
-        // The marker, positioned at Uluru
-        const marker = new AdvancedMarkerElement({
-            map: map,
-            position: position,
-            title: "Uluru",
-        });
+            // The map, centered at Uluru
+            map_2 = new Map(document.getElementById("map2"), {
+                zoom: 10,
+                center: position,
+                mapId: "DEMO_MAP_2",
+            });
+            // The marker, positioned at Uluru
+            const marker_2 = new AdvancedMarkerElement({
+                map: map_2,
+                position: position,
+                title: "Uluru_2",
+            });
+
         }
 
         initMap();

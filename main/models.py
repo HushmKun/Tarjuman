@@ -50,7 +50,7 @@ class Post(models.Model):
     title = models.CharField(max_length=700, verbose_name="العنوان الداخلي" )
     ext_name = models.CharField(max_length=100, verbose_name="العنوان الخارجي")
     category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="posts", verbose_name="التصنيف")
-    author = models.ForeignKey("author", on_delete=models.CASCADE, verbose_name="الكاتب")
+    author = models.ManyToManyField("author", verbose_name=_("الكاتب"))
     date = models.DateField(auto_now=False, auto_now_add=True)
     slug = models.SlugField()
     main_img = models.ImageField(upload_to="posts", height_field=None, width_field=None, max_length=None, verbose_name="الصورة الخارجية")
@@ -82,7 +82,7 @@ class Post(models.Model):
 
 class Comment(models.Model):
 
-    post = models.ForeignKey("Post", verbose_name="post", on_delete=models.CASCADE)
+    post = models.ForeignKey("Post", verbose_name="post", on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(User, verbose_name="user", on_delete=models.CASCADE)
     date = models.DateTimeField(auto_now=False, auto_now_add=True)
     body = models.CharField(max_length=300) 

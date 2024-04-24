@@ -11,6 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 try:
     SECRET_KEY = environ["SECRET_KEY"]
     DEBUG = environ["DEBUG"] == "True"
+    GEOPOSITION_GOOGLE_MAPS_API_KEY = GOOGLE_MAPS_API_KEY = environ["GOOGLE_MAPS"]
 except KeyError as e:
     raise RuntimeError("Could not find a SECRET_KEY in environment") from e
 
@@ -134,7 +135,6 @@ if DEBUG :
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-GEOPOSITION_GOOGLE_MAPS_API_KEY = GOOGLE_MAPS_API_KEY = environ["GOOGLE_MAPS"]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 

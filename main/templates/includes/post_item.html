@@ -3,15 +3,17 @@
 {% for post in posts %}
 <div class="latest__post-item">
     <div class="latest__post-thumb tgImage__hover">
-        <a href="{% url 'post' post.slug %}"><img src={{ post.main_img.url}} alt="img"></a>
+        <a href="{% url 'post' post.slug %}"><img src={{ post.main_img.url }} alt="img"></a>
     </div>
     <div class="latest__post-content">
         <ul class="tgbanner__content-meta list-wrap">
             <li class="category"><a href={% url 'category' post.category.eng_name %}>{{ post.category }}</a></li>
-            <li><span class="by">بواسطة </span>{{ post.author }}</li>   
-            <li>{{ post.date}}</li>
+            {% for author in post.author.all|slice:":1" %}
+                <li><span class="by">{% if "مقالات" in post.tags.all %} بقلم {% else %} كتب {% endif %} </span>{{ author }}</li>   
+            {% endfor %}
+            <li>{{ post.date }}</li>
         </ul>
-        <h3 class="title tgcommon__hover"><a href="{% url 'post' post.slug %}">{{post.ext_name}}</a></h3>
+        <h3 class="title tgcommon__hover"><a href="{% url 'post' post.slug %}">{{ post.ext_name }}</a></h3>
         <p>{{ post.desc }}</p>
         <div class="latest__post-read-more">
             <a href="{% url 'post' post.slug %}">إقرأ المزيد <i class="fa-solid fa-arrow-left-long"></i></a>
