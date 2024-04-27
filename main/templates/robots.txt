@@ -1,0 +1,10 @@
+User-agent: *
+Allow: *
+Disallow: /admin/*
+Disallow: /accounts/*
+Disallow: /summernote/*
+
+
+
+Sitemap: https://turjman.site/sitemap.xml
+Sitemap: https://www.turjman.site/sitemap.xml
