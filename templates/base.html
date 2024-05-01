@@ -1,4 +1,4 @@
-{% load static %}
+    {% load static %}
 <!DOCTYPE html>
 <html class="no-js" lang="en" dir="rtl">
     <head>
@@ -8,11 +8,8 @@
             {% block page_title %}
             {% endblock page_title %}
         </title>
-        <meta name="description" content="Turjman: You're portal in Cairo">
-        <meta name="description" content="ترجمان : بوابتك للقاهرة">
-        <meta name="Keywords" content="Turjman | Cairo | History | ترجمان | القاهرة | التاريخ">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="shortcut icon" type="image/x-icon" href={% static 'assets/img/favicon.ico' %}>
         {% block head %}
         {% endblock head %}
@@ -115,6 +112,7 @@
                                         </ul>
                                     </div>
                                     <div id="user-data">
+                                        <a href="#" data-bs-toggle="tooltip" data-bs-title="المقال الافتتاحي"><i class="fa-solid fa-ankh"></i></a>
                                         {% if user.is_authenticated %}
                                             {% if user.is_staff %}
                                                 <a href={% url 'admin:index' %}><i class="fas fa-pen"></i></a>
@@ -365,81 +363,31 @@
                         <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
                             <div class="footer__widget">
                                 <h4 class="fw-title">فرعوني</h4>
-                                <ul class="list-wrap">
-                                    <li>
-                                        <a href="#">معبد أبو سمبل</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">وادي الملوك</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">الأهرامات</a>
-                                    </li>
-                                </ul>
+                                {% include "includes/list_wrap.html" with posts=pharo %}
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
                             <div class="footer__widget">
                                 <h4 class="fw-title">قبطي</h4>
-                                <ul class="list-wrap">
-                                    <li>
-                                        <a href="#">الكنيسة المعلقة</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">كنيسة ماري جرجس</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">دير البنات الراهبات</a>
-                                    </li>
-                                </ul>
+                                {% include "includes/list_wrap.html" with posts=coptic %}
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
                             <div class="footer__widget">
                                 <h4 class="fw-title">إسلامي</h4>
-                                <ul class="list-wrap">
-                                    <li>
-                                        <a href="#">مسجد الصالح طلائع</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">مئذنة المشهد الحسيني</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">سبيل علي بك الدمياطي</a>
-                                    </li>
-                                </ul>
+                                {% include "includes/list_wrap.html" with posts=islamic %}
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
                             <div class="footer__widget">
                                 <h4 class="fw-title">حديث</h4>
-                                <ul class="list-wrap">
-                                    <li>
-                                        <a href="#">الجندي المجهول</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">برج القاهرة</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">قصر النيل</a>
-                                    </li>
-                                </ul>
+                                {% include "includes/list_wrap.html" with posts=modern %}
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-3 col-md-4 col-sm-6">
                             <div class="footer__widget">
                                 <h4 class="fw-title">بودكاست</h4>
-                                <ul class="list-wrap">
-                                    <li>
-                                        <a href="#">تأثير الماضي علي المستقبل</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">هل يعيد التاريخ نفسه؟</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">بين الحاضر و المستقبل</a>
-                                    </li>
-                                </ul>
+                                {% include "includes/list_wrap.html" with posts=podcast %}
                             </div>
                         </div>
                     </div>

@@ -8,6 +8,8 @@
 {% block head %}
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <link rel="stylesheet" href="{% static 'assets/css/comments.css' %}">
+    <meta name="description" content="{{ post.desc }}">
+    <meta name="keywords" content="{{ post.ext_name }}">
 {% endblock head %}
 
 {% block content %}
@@ -126,8 +128,8 @@
                                 </div>
                                 {% include "includes/comments.html" with comments=comments %}
                             </div>
+                            {% for author in post.author.all %}
                             <div class="blog-avatar-wrap">
-                                {% for author in post.author.all|slice:":1" %}
                                 <div class="blog-avatar-img">
                                     {% if author.img %}
                                     <a href="#"><i class="fa-solid fa-check"></i><img src={{ author.img.url }} alt="img"></a>
@@ -138,12 +140,11 @@
                                     {% endif %}
                                 </div>
                                 <div class="blog-avatar-content">
-                                    <p>{{ author.desc }}</p>
                                     <h5 class="name">{{ author.name }}</h5>
                                     <span class="designation">{{ author.pos }}</span>
                                 </div>
-                                {% endfor %}
-                            </div>
+                                </div>
+                            {% endfor %}
                     <div class="blog-prev-next-posts">
                         <div class="row">
                             {% if prev_post %}

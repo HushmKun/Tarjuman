@@ -70,6 +70,8 @@
   --tg-fw-medium: 500;
   --tg-fw-regular: 400;
   --tg-fw-light: 300;
+  --tg-tooltip-color: #ffffff;
+  --tg-tooltip-bg: #ff3366;
 }
 
 /*=============================
@@ -1597,7 +1599,7 @@ input[type=color] {
   min-width: 150px;
   padding: 5px 5px 5px 46px;
   margin-right: 8px;
-  left: 8%;
+  left: 22%;
   position: relative;
 }
 .logo a.logo-light {
