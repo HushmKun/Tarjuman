@@ -47,7 +47,7 @@ class Author(models.Model):
 
 class Post(models.Model):
 
-    title = models.CharField(max_length=700, verbose_name="العنوان الداخلي" )
+    title = models.CharField(max_length=2000, verbose_name="العنوان الداخلي" )
     ext_name = models.CharField(max_length=100, verbose_name="العنوان الخارجي")
     category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="posts", verbose_name="التصنيف")
     author = models.ManyToManyField("author", verbose_name=_("الكاتب"))

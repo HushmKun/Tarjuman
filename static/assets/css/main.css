@@ -1608,8 +1608,10 @@ input[type=color] {
 @media(max-width: 767.98px) {
   .logo a.logo-dark {
     display: none;
+    left: 10%;
   }
   .logo a.logo-light {
+    left: 10%;
     display: inline-block;
   }
 }
