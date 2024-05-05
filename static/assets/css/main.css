@@ -1602,16 +1602,25 @@ input[type=color] {
   left: 22%;
   position: relative;
 }
+@media(max-width: 767.98px) {
+  .logo a img {
+    max-width: 125px;
+    min-width: 150px;
+    padding: 5px 5px 5px 46px;
+    margin-right: 8px;
+    left: 22%;
+    position: relative;
+    left: 10%;
+  }
+}
 .logo a.logo-light {
   display: none;
 }
 @media(max-width: 767.98px) {
   .logo a.logo-dark {
     display: none;
-    left: 10%;
   }
   .logo a.logo-light {
-    left: 10%;
     display: inline-block;
   }
 }
