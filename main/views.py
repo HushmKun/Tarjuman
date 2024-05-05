@@ -1,6 +1,6 @@
 from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Post, Author, Category, Comment
+from .models import Post, Author, Category, Comment, Tag
 import random
 from django.conf import settings 
 
@@ -93,6 +93,7 @@ def post(request, slug):
 
     static = get_footer()
     context = {
+        "category": Tag.objects.get(caption__exact='مقالات') in post.tags.all() ,
         "categories": categories,
         "post": post,
         "prev_post": prev_posts,

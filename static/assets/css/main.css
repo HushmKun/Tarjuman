@@ -1941,7 +1941,7 @@ input[type=color] {
 }
 
 .text-just {
-  text-align: justify;
+  text-align: center;
 }
 
 .text-bold {
@@ -3611,7 +3611,7 @@ input[type=color] {
 }
 .featured__content .title {
   margin: 0 0;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.4;
 }
 @media only screen and (min-width: 576px) and (max-width: 767px) {

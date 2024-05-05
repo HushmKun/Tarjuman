@@ -80,9 +80,11 @@
                                 <li>{{ comments.count }} إعجاب</li>
                             </ul>
                             <div>{{ post.title|safe }}</div>
+                            {% if not category %}
                             <div class="blog-details-thumb">
                                 <img src={{ post.main_img.url }} alt="">
                             </div>
+                            {% endif %}
                             <div class="blog-details-content">{{ post.content|safe }}</div>
                             <div class="blog-details-bottom">
                                 <div class="row align-items-baseline">
