@@ -115,11 +115,11 @@
                                         <a href="#" data-bs-toggle="tooltip" data-bs-title="المقال الافتتاحي"><i class="fa-solid fa-ankh"></i></a>
                                         {% if user.is_authenticated %}
                                             {% if user.is_staff %}
-                                                <a href={% url 'admin:index' %}><i class="fas fa-pen"></i></a>
+                                                <a href={% url 'admin:index' %}><i class="fa-solid fa-pen"></i></a>
                                             {% endif %}
-                                            <a href="{% url 'dashboard' %}"><i class="fas fa-user"></i></a>
+                                            <a href="{% url 'dashboard' %}"><i class="fa-solid fa-user"></i></a>
                                         {% else %}
-                                            <a href={% url 'login' %}><i class="fas fa-sign-in-alt"></i></a>
+                                            <a href={% url 'login' %}><i class="fa-solid fa-sign-in-alt"></i></a>
                                         {% endif %}
                                     </div>
                                 </nav>
