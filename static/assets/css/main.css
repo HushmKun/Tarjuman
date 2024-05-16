@@ -1948,7 +1948,6 @@ input[type=color] {
   font-size: x-large;
   padding-left: 10px;
   padding-right: 10px;
-  margin-top:20px;
 }
 
 .text-just {
@@ -5205,6 +5204,9 @@ blockquote .blockquote-cite .info span {
 .blog-avatar-img img {
   max-width: 120px;
   border-radius: 50%;
+  aspect-ratio: 1;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .blog-avatar-img a {
   display: inline-block;

@@ -41,7 +41,6 @@ def home(request):
 
 
 def category(request, cat):
-
     categories = Category.objects.all().order_by("order")
     category = categories.get(eng_name=cat)
     posts = category.posts.all().order_by("-date")
