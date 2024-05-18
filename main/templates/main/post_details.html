@@ -68,7 +68,13 @@
                                     <a href={% url 'category' post.category.eng_name %}>{{ post.category }}</a>
                                 </li>
                                 <li>
-                                    <span class="by">{% if "مقالات" in post.tags %} بقلم {% else %} كتب {% endif %}</span>
+                                    <span class="by">
+                                        {% if "podcast" in post.category.eng_name %}
+                                        إعداد 
+                                        {% else %}
+                                        كتب 
+                                        {% endif %}
+                                    </span>
                                     {% for author in post.author.all %}
                                         <a href="#">
                                             {{ author }}
