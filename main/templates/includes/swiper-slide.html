@@ -14,7 +14,11 @@
                     <ul class="tgbanner__content-meta list-wrap">
                         <li class="category"><a href={% url 'category' post.category.eng_name %}>{{ post.category }}</a></li>
                         {% for author in post.author.all|slice:":1" %}
-                        <li><span class="by">{% if "مقالات" in post.tags.all %} بقلم {% else %} كتب {% endif %} </span> {{ author }} </li>   
+                        <li><span class="by"> {% if "podcast" in post.category.eng_name %}
+                            إعداد 
+                            {% else %}
+                            كتب 
+                            {% endif %} </span> {{ author }} </li>   
                         {% endfor %}    
                     </ul>
                     <h4 class="title tgcommon__hover"><a href={% url 'post' post.slug %}>{{ post.ext_name }}</a></h4>
