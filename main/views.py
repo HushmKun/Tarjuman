@@ -21,7 +21,7 @@ def get_footer():
 def home(request):
 
     items = Post.objects.exclude(tags__caption="مقالات").exclude(tags__caption="إفتتاحي").order_by("-date")[:3]
-    articles = Post.objects.filter(tags__caption="مقالات")[:4].exclude(slug__contain="ynyr-drob-ltrykh-olgml-lmnsy-fy-klb-lkhr-1")
+    articles = Post.objects.filter(tags__caption="مقالات")[:4]
     reports = Post.objects.filter(tags__caption="تقرير")[:5]
     news = Post.objects.filter(tags__caption="أخبار")
     static = get_footer()
