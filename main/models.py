@@ -51,7 +51,7 @@ class Post(models.Model):
     ext_name = models.CharField(max_length=100, verbose_name="العنوان الخارجي")
     category = models.ForeignKey("Category", on_delete=models.CASCADE, related_name="posts", verbose_name="التصنيف")
     author = models.ManyToManyField("author", verbose_name=_("الكاتب"))
-    date = models.DateField(auto_now=False, auto_now_add=True)
+    date = models.DateField()
     slug = models.SlugField()
     main_img = models.ImageField(upload_to="posts", height_field=None, width_field=None, max_length=None, verbose_name="الصورة الخارجية")
     content = models.TextField(verbose_name="المحتوي")

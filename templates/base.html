@@ -61,6 +61,13 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="col-lg-4 col-md-3 order-0 order-lg-0 d-none d-md-block">
+                            <p class="align-items-center d-flex flex-nowrap flex-row justify-content-evenly mt-4 white-bg bg-col bod">
+                                <i class="fa-solid fa-clock rem"></i> 
+                                <span id="clock"></span> 
+                                <i class="fa-regular fa-calendar-days pb-1"></i> 
+                                <span id="date"></span></p>
+                        </div>
                         <div id="custom-bar" class="col-lg-4 col-md-6 col-sm-6 order-2 order-lg-2">
                             <div class="header__top-search">
                                 <form action="#">
@@ -315,7 +322,7 @@
                                 سهيلة عاطف - سارة منصور 
                         </p>
                     </div>
-                    <div class="offCanvas__contact">
+                    {% comment %} <div class="offCanvas__contact">
                         <h4 class="title">تواصل  معنا</h4>
                         <ul class="offCanvas__contact-list list-wrap ltr">
                             <li>
@@ -346,7 +353,7 @@
                                 <a href="https://www.tiktok.com/@turjmaan"><i class="fab fa-tiktok"></i></a>
                             </li>
                         </ul>
-                    </div>
+                    </div> {% endcomment %}
                 </div>
             </div>
             <div class="offCanvas__overlay"></div>
@@ -468,6 +475,32 @@
         <script src={% static 'assets/js/wow.min.js' %}></script>
         <script src={% static 'assets/js/main.js' %}></script>
         <script src="https://kit.fontawesome.com/12d0346ec6.js" crossorigin="anonymous"></script>
+        <script>
+            function startTime() {
+              const today = new Date();
+              let h = today.getHours();
+              let m = today.getMinutes();
+              let s = today.getSeconds();
+              let d = today.getDay();
+              let mo = today.getMonth();
+              let y = today.getFullYear();
+              let da = today.getDate();
+              h = checkTime(h);
+              m = checkTime(m);
+              s = checkTime(s);
+              d = checkTime(d);
+              mo = checkTime(mo);
+              document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+              document.getElementById('date').innerHTML =  + y + "/" + mo + "/" + da ;
+              setTimeout(startTime, 1000);
+            }
+            
+            function checkTime(i) {
+              if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+              return i;
+            }
+            startTime();
+            </script>
         {% block script %}
         {% endblock script %}
     </body>

@@ -18,8 +18,7 @@ class CategoryAdmin(admin.ModelAdmin):
     
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
-    list_display = ["ext_name", "category", "desc",
-     "date", "main_img"]
+    list_display = ["ext_name", "category", "desc","date", "main_img"]
     prepopulated_fields = {"slug": ("ext_name","category")}
     summernote_fields = ('content','title')
     search_fields = ('ext_name', 'author')
@@ -31,7 +30,7 @@ class PostAdmin(SummernoteModelAdmin):
         (
             "بيانات الخبر",
             {
-                "fields": [ "category", "author", "tags", "main_img"],
+                "fields": [ "category", "author", "tags", "main_img", "date"],
             },
         ),
         (
