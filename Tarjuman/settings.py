@@ -1,4 +1,3 @@
-
 from pathlib import Path
 from dotenv import load_dotenv
 from os import environ
@@ -17,10 +16,10 @@ except KeyError as e:
 
 
 ALLOWED_HOSTS = ["20.46.48.156", ".turjman.site"]
-CSRF_TRUSTED_ORIGINS = ['https://turjman.site', 'https://www.turjman.site']
+CSRF_TRUSTED_ORIGINS = ["https://turjman.site", "https://www.turjman.site"]
 
-if DEBUG : 
-    ALLOWED_HOSTS.append('*')
+if DEBUG:
+    ALLOWED_HOSTS.append("*")
 
 INSTALLED_APPS = [
     "main",
@@ -28,7 +27,7 @@ INSTALLED_APPS = [
     "admin_interface",
     "django_google_maps",
     "colorfield",
-    'django_summernote',
+    "django_summernote",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -36,7 +35,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
-    "django.contrib.sitemaps"
+    "django.contrib.sitemaps",
 ]
 
 SITE_ID = 1
@@ -52,21 +51,21 @@ MIDDLEWARE = [
 ]
 
 SUMMERNOTE_CONFIG = {
-    'summernote' : {
-        'lang': 'ar-AR',
+    "summernote": {
+        "lang": "ar-AR",
     },
-    'toolbar': [
-            ['style', ['style']],
-            ['font', ['bold', 'underline', 'clear']],
-            ['fontname', ['fontname']],
-            ['color', ['color']],
-            ['para', ['ul', 'ol', 'paragraph']],
-            ['table', ['table']],
-            ['insert', ['link', 'picture', 'video']],
-            ['insert', ['ltr','rtl']],
-            ['view', ['fullscreen', 'codeview', 'help']],
-        ],
-    'js': ('/static/assets/js/summernote-ext-rtl.js',)
+    "toolbar": [
+        ["style", ["style"]],
+        ["font", ["bold", "underline", "clear"]],
+        ["fontname", ["fontname"]],
+        ["color", ["color"]],
+        ["para", ["ul", "ol", "paragraph"]],
+        ["table", ["table"]],
+        ["insert", ["link", "picture", "video"]],
+        ["insert", ["ltr", "rtl"]],
+        ["view", ["fullscreen", "codeview", "help"]],
+    ],
+    "js": ("/static/assets/js/summernote-ext-rtl.js",),
 }
 
 ROOT_URLCONF = "Tarjuman.urls"
@@ -122,18 +121,18 @@ USE_I18N = True
 
 USE_TZ = True
 
-#* Static Files Management 
-STATICFILES_DIRS = [BASE_DIR / "static"]  
+# * Static Files Management
+STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_URL = "static/"
-STATIC_ROOT = '/var/www/tarjuman/static'
+STATIC_ROOT = "/var/www/tarjuman/static"
 
-#* Media Files Management 
+# * Media Files Management
 MEDIA_URL = "media/"
-MEDIA_ROOT = '/var/www/tarjuman/media'
-if DEBUG : 
-    MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = "/var/www/tarjuman/media"
+if DEBUG:
+    MEDIA_ROOT = BASE_DIR / "media"
 
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"

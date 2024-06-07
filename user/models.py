@@ -7,7 +7,9 @@ from PIL import Image  # We'll use Pillow for image handling
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    profile_picture = models.ImageField(upload_to='profile_pics', default='avatars/avatar.png')
+    profile_picture = models.ImageField(
+        upload_to="profile_pics", default="avatars/avatar.png"
+    )
 
     def __str__(self):
-        return f'{self.user.username} Profile'
+        return f"{self.user.username} Profile"

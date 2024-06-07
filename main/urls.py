@@ -7,5 +7,3 @@ urlpatterns = [
     path("post/<slug:slug>", views.post, name="post"),
     path("usage", views.usage, name="usage"),
 ]
-
-

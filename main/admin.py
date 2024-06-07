@@ -7,42 +7,58 @@ from django_google_maps import fields as map_fields
 
 # Register your models here.
 
+
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ["name", "img", "desc", "pos"]
-    list_filter = ('pos',)
+    list_filter = ("pos",)
+
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ["name", "eng_name", "img", "order"]
-    
+
+
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
-    list_display = ["ext_name", "category", "desc","date", "main_img"]
-    prepopulated_fields = {"slug": ("ext_name","category")}
-    summernote_fields = ('content','title')
-    search_fields = ('ext_name', 'author')
-    list_filter = ('category','author')
+    list_display = ["ext_name", "category", "desc", "date", "main_img"]
+    prepopulated_fields = {"slug": ("ext_name", "category")}
+    summernote_fields = ("content", "title")
+    search_fields = ("ext_name", "author")
+    list_filter = ("category", "author")
     formfield_overrides = {
-        map_fields.AddressField: {'widget': map_widgets.GoogleMapsAddressWidget(attrs={'data-map-type': 'terrain'})},
+        map_fields.AddressField: {
+            "widget": map_widgets.GoogleMapsAddressWidget(
+                attrs={"data-map-type": "terrain"}
+            )
+        },
     }
     fieldsets = [
         (
             "بيانات الخبر",
             {
-                "fields": [ "category", "author", "tags", "main_img", "date"],
+                "fields": ["category", "author", "tags", "main_img", "date"],
             },
         ),
         (
-          "محتوي الخبر",
+            "محتوي الخبر",
             {
-                "fields": ["title", "ext_name", "desc", "content", "address", ],
+                "fields": [
+                    "title",
+                    "ext_name",
+                    "desc",
+                    "content",
+                    "address",
+                ],
             },
         ),
         (
             "تكاليف الزيارة",
             {
-                "fields": [("Egyptian", "Egyptian_student"), ("Foreign", "Foreign_student")],
+                "fields": [
+                    ("Egyptian", "Egyptian_student"),
+                    ("Foreign", "Foreign_student"),
+                ],
             },
         ),
         (
@@ -53,19 +69,17 @@ class PostAdmin(SummernoteModelAdmin):
         ),
         (
             "لا تلمس",
-            {
-                "fields" : ["slug", "geolocation"]
-            },
+            {"fields": ["slug", "geolocation"]},
         ),
     ]
 
-    
-    
+
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ( 'user', 'body', 'post', 'date')
-    list_filter = ('date','post')
+    list_display = ("user", "body", "post", "date")
+    list_filter = ("date", "post")
+
 
 @admin.register(Tag)
 class TagAdmin(admin.ModelAdmin):
-    list_display = ('caption', )
+    list_display = ("caption",)
