@@ -482,14 +482,14 @@
               let m = today.getMinutes();
               let s = today.getSeconds();
               let d = today.getDay();
-              let mo = today.getMonth();
+              let mo = today.getMonth() + 1;
               let y = today.getFullYear();
               let da = today.getDate();
               h = checkTime(h);
               m = checkTime(m);
               s = checkTime(s);
               d = checkTime(d);
-              mo = checkTime(mo);
+              mo = checkTime(mo) ;
               document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
               document.getElementById('date').innerHTML =  + y + "/" + mo + "/" + da ;
               setTimeout(startTime, 1000);
