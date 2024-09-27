@@ -8,3 +8,4 @@ migrations/
 media/
 scss/
 fake_users.py
+www/

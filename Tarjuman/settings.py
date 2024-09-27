@@ -15,7 +15,7 @@ except KeyError as e:
     raise RuntimeError("Could not find a SECRET_KEY in environment") from e
 
 
-ALLOWED_HOSTS = ["20.46.48.156", ".turjman.site"]
+ALLOWED_HOSTS = [".turjman.site"]
 CSRF_TRUSTED_ORIGINS = ["https://turjman.site", "https://www.turjman.site"]
 
 if DEBUG:
@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     "django.contrib.sitemaps",
+    "django_unused_media",
 ]
 
 SITE_ID = 1
@@ -124,11 +125,11 @@ USE_TZ = True
 # * Static Files Management
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_URL = "static/"
-STATIC_ROOT = "/var/www/tarjuman/static"
+STATIC_ROOT = "/home/hushm/Turjman/www/static"
 
 # * Media Files Management
 MEDIA_URL = "media/"
-MEDIA_ROOT = "/var/www/tarjuman/media"
+MEDIA_ROOT = "/home/hushm/Turjman/www/media"
 if DEBUG:
     MEDIA_ROOT = BASE_DIR / "media"
 
