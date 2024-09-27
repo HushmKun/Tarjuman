@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     "api",
     "rest_framework",
     "rest_framework.authtoken",
+    "subdomains",
 ]
 
 SITE_ID = 1
@@ -47,6 +48,7 @@ SITE_ID = 1
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
+    "subdomains.middleware.SubdomainURLRoutingMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -73,6 +75,12 @@ SUMMERNOTE_CONFIG = {
 }
 
 ROOT_URLCONF = "Tarjuman.urls"
+
+SUBDOMAIN_URLCONFS = {
+    None: 'Tarjuman.urls',  # no subdomain, e.g. ``example.com``
+    'www': 'Tarjuman.urls',
+    'api': 'api.urls',
+}
 
 TEMPLATES = [
     {

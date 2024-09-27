@@ -18,3 +18,4 @@ gunicorn
 django-admin-interface
 django-summernote
 django_unused_media
+django-subdomains
