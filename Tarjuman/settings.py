@@ -82,6 +82,8 @@ SUBDOMAIN_URLCONFS = {
     'api': 'api.urls',
 }
 
+SUBDOMAIN_DOMAIN = "turjman.site"
+
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
