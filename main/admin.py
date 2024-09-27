@@ -10,14 +10,11 @@ from django_google_maps import fields as map_fields
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
-    list_display = ["name", "img", "desc", "pos"]
-    list_filter = ("pos",)
-
+    list_display = ["name", "img", "desc"]
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ["name", "eng_name", "img", "order"]
-
 
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):

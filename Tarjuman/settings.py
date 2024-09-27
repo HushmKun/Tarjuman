@@ -37,6 +37,9 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "django.contrib.sitemaps",
     "django_unused_media",
+    "api",
+    "rest_framework",
+    "rest_framework.authtoken",
 ]
 
 SITE_ID = 1

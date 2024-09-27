@@ -6,9 +6,6 @@ from django.utils.translation import gettext_lazy as _
 
 # Create your models here.
 
-get_positions = {"محرر": "محرر", "كاتب": "كاتب", "محررة": "محررة", "كاتبة": "كاتبة"}
-
-
 class Category(models.Model):
     name = models.CharField(max_length=60, verbose_name="التصنيف")
     eng_name = models.CharField(
@@ -45,7 +42,6 @@ class Author(models.Model):
         verbose_name="الصورة",
     )
     desc = models.TextField(verbose_name="الوصف")
-    pos = models.CharField(max_length=30, choices=get_positions, verbose_name="المنصب")
 
     class Meta:
         verbose_name = "Author"
